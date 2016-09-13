@@ -5,16 +5,28 @@ set norelativenumber "This turns off relative numbering
 
 call plug#begin('~/.vim/plugged')
 
+"Plug 'tpope/vim-sensible'
+
 " Make sure you use single quotes
 Plug 'croaker/mustang-vim'
 Plug 'chriskempson/base16-vim'
-
+Plug 'jnurmine/Zenburn'
+Plug 'fmoralesc/vim-vitamins'
+Plug 'morhetz/gruvbox'
+Plug 'romainl/Apprentice'
+Plug 'croaker/mustang-vim'
+Plug 'fugalh/desert.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+
 " Add plugins to &runtimepath
 call plug#end()
 
 set t_Co=256 " Force vim to display 256 colors. See http://vim.wikia.com/wiki/256_colors_in_vim for something more robust ?
-colorscheme mustang
+colorscheme desert
 
 
 set ruler "Show the current row and line at the bottom right of the screen
@@ -39,4 +51,3 @@ syntax on
 
 " Don't update the display while executing a macro
 set nolazyredraw
-
