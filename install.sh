@@ -17,6 +17,6 @@ files="vimrc"
 
 for file in $files; do
 	echo "Creating symlink of $file"
-	ln -s ~/dotfiles/$file ~/.$file
+	ln -s ~/dotfiles/vim/$file ~/.$file
 done
 
