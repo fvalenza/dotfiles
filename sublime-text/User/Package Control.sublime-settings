@@ -1,0 +1,38 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"ClangAutoComplete",
+		"CMakeEditor",
+		"Color Scheme - Gray Matter",
+		"CTags",
+		"DoxyDoxygen",
+		"GitGutter",
+		"GitSyntaxes",
+		"INI",
+		"LaTeXing",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"MarkdownLight",
+		"MaxPane",
+		"Origami",
+		"Package Control",
+		"Pane Resizer",
+		"SideBarEnhancements",
+		"SmartMarkdown",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-contrib-clang",
+		"SublimeLinter-cppcheck",
+		"Sublimerge 3",
+		"Terminal",
+		"Theme - Nexus",
+		"Tomorrow Color Schemes",
+		"Vintageous"
+	]
+}

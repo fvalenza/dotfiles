@@ -1,0 +1,7 @@
+{
+    "python_path": "python",
+    "ycmd_path": "/local/fvalenza/devel/src/ycmd",
+    "highlight_errors_on_save": false,
+    "select_after_goto": false,
+    "error_panel_syntax_file": "Packages/C++YouCompleteMe/ErrorPanel.tmLanguage"
+}

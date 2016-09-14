@@ -1,0 +1,11 @@
+{
+  "include_dirs" : [
+            // "/usr/include",
+            "$project_base_path/src",
+            "/workspace/$project_name/src",
+            // "/usr/include/c++/4.6",
+            // "/usr/lib/clang/3.4/include",
+            // "/usr/include/clang/3.4/include",
+            "$project_base_path"
+            ]
+}
