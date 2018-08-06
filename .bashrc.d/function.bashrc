@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ## useful functions that are toobig for aliases and do not worth full scripts
 ## highly inspried by mathisasbynens dotfiles

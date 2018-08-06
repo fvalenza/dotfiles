@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-alias cdd='cd /local/fvalenza/devel'
-
-alias gepetto-viewer-server='/local/fvalenza/devel/install/bin/gepetto-viewer-server'
-
-alias lint='/home/fvalenza/Desktop/cpplint.py --extensions=hpp,cpp'

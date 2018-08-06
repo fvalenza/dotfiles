@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -i
 
 # Personal Shell prompt. Surely needs some modifications or testing (solrized ?)
 

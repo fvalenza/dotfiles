@@ -1,3 +1,23 @@
+Install customized bashrc files
+---
+I wanted it to be the less intrusive as possible as I may install it on computer with & without root access, at work or at home.
+Just run the `./install_sh` in the root of this directory and all the sourcing should be done.
+
+```bash
+cd */devel/dir*
+git clone https://github.com/fvalenza/dotfiles
+cd dotfiles
+vim .bashrc.d/env.bashrc # modify DEVEL_DIR variable
+./install_sh
+```
+
+
+
+
+TODO
+---
+Sublimetext
+
  see getting-started and managing your dotfiles at [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)
 
 For sublime-text, one needs first to :
