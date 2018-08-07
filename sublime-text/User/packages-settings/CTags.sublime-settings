@@ -1,8 +1,0 @@
-{
-  // Enable auto-complete.
-    //
-    // When enabled, this turns on a basic "auto-complete" feature, similar to
-    // a very rudimentary "Intellisense(TM)". This is useful for providing
-    // better suggestions than stock Sublime Text could provide.
-    //"autocomplete": true,
-}

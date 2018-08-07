@@ -1,0 +1,35 @@
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"fade_fold_buttons": false,
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"indent_to_bracket": true,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"shift_tab_unindent": true,
+	"tab_size": 2,
+	"theme": "Nexus.sublime-theme",
+	"theme_accent_tangerine": true,
+	"theme_autocomplete_item_selected_colored": true,
+	"theme_font_sm": true,
+	"theme_scrollbar_rounded": true,
+	"theme_sidebar_folder_mono": true,
+	"theme_sidebar_indent_md": true,
+	"theme_size_xs": true,
+	"theme_tab_selected_prelined": true,
+	"theme_tab_width_auto": true,
+	"theme_unified": true,
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true,
+	"word_wrap": false,
+	"wrap_width": 120
+}
