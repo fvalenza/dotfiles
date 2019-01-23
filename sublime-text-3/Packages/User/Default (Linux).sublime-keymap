@@ -1,0 +1,11 @@
+[
+  // When vintageous active and tab_completion display is active, escape only hide
+  // popup. Does not switch in normal mode
+  { "keys": ["escape"], "command": "hide_auto_complete",   "args": {"mode": "mode_insert"},
+    "context":
+    [
+      {"key": "vi_insert_mode_aware"},
+      {"key": "auto_complete_visible", "operator": "equal", "operand": true}
+    ]
+  },
+]

@@ -1,22 +1,46 @@
 {
-	"bold_folder_labels": true,
+	///
+	/// Auto completion and TAB
+	///
+
+	// When enabled, pressing tab will insert the best matching completion.
+  // When disabled, tab will only trigger snippets or insert a tab.
+  // Shift+tab can be used to insert an explicit tab when tab_completion is
+  // enabled.
+	"tab_completion": false,
+
+	// Enable auto complete to be triggered automatically when typing.
+  "auto_complete": true,
+
+  // By default, auto complete will commit the current completion on enter.
+  // This setting can be used to make it complete on tab instead.
+  // Completing on tab is generally a superior option, as it removes
+  // ambiguity between committing the completion and inserting a newline.
+  "auto_complete_commit_on_tab": false,
+
+  // Controls what happens when pressing the up key while the first item in
+  // the auto complete window is selected: if false, the window is hidden,
+  // otherwise the last item in the window is selected. Likewise for the
+  // down key when the last item is selected.
+	"auto_complete_cycle": true,
+
+	// By default, shift+tab will only unindent if the selection spans
+  // multiple lines. When pressing shift+tab at other times, it'll insert a
+  // tab character - this allows tabs to be inserted when tab_completion is
+  // enabled. Set this to true to make shift+tab always unindent, instead of
+  // inserting tabs.
+  "shift_tab_unindent": true,
+
+
+  ///
+  /// Color scheme and theme
+  ///
+
+	// Sets the colors used within the text area
 	"color_scheme": "Packages/Predawn/predawn.tmTheme",
-	"fade_fold_buttons": false,
+
 	"font_size": 10,
-	"highlight_line": true,
-	"ignored_packages":
-	[
-		"Markdown",
-		"Vintage"
-	],
-	"indent_to_bracket": true,
-	"rulers":
-	[
-		80,
-		120
-	],
-	"shift_tab_unindent": true,
-	"tab_size": 2,
+
 	"theme": "Nexus.sublime-theme",
 	"theme_accent_tangerine": true,
 	"theme_autocomplete_item_selected_colored": true,
@@ -28,8 +52,87 @@
 	"theme_tab_selected_prelined": true,
 	"theme_tab_width_auto": true,
 	"theme_unified": true,
+
+
+	///
+	/// Quality of Life settings
+	///
+
+	// Hides the fold buttons unless the mouse is over the gutter
+	"fade_fold_buttons": false,
+
+	// Columns in which to display vertical rulers
+	"rulers":
+	[
+		80,
+		120
+	],
+
+	// The number of spaces a tab is considered equal to
+	"tab_size": 2,
+
+	// Set to true to insert spaces when tab is pressed
 	"translate_tabs_to_spaces": true,
+
+	// If translate_tabs_to_spaces is true, use_tab_stops will make tab and
+  // backspace insert/delete up to the next tabstop
 	"use_tab_stops": true,
-	"word_wrap": false,
-	"wrap_width": 120
+
+	// Adds whitespace up to the first open bracket when indenting. Requires
+  // auto_indent to be enabled.
+	"indent_to_bracket": true,
+
+	// Disables horizontal scrolling if enabled.
+  // May be set to true, false, or "auto", where it will be disabled for
+  // source code, and otherwise enabled.
+  "word_wrap": "auto",
+
+  // Set to a value other than 0 to force wrapping at that column rather than the
+  // window width
+	"wrap_width": 120,
+
+	// Set to true to draw a border around the visible rectangle on the minimap.
+  // The color of the border will be determined by the "minimapBorder" key in
+  // the color scheme
+	"draw_minimap_border": true,
+
+	// If enabled, will highlight any line with a caret
+	"highlight_line": true,
+
+	// Set to true to removing trailing white space on save
+	"trim_trailing_white_space_on_save": true,
+
+	// Set to true to ensure the last line of the file ends in a newline
+  // character when saving
+	"ensure_newline_at_eof_on_save": true,
+
+	// Show folders in the side bar in bold
+	"bold_folder_labels": true,
+
+	// Display file encoding in the status bar
+	"show_encoding": true,
+
+	// Display line endings in the status bar
+	"show_line_endings": true,
+
+
+	///
+	/// Packages
+	///
+
+	// List any packages to ignore here. When removing entries from this list,
+  // a restart may be required if the package contains plugins.
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+
+	//
+	// Vintageous
+	//
+
+	// If true, some key bindings prefaced by the CTRL modifier will override default Sublime Text
+	// key bindings.
+	"vintageous_use_ctrl_keys": false,
 }

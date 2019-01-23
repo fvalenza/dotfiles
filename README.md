@@ -19,6 +19,19 @@ Sublime text package syncing
 . Put in `Packages/User` folder (to find it go to Preferences - Browse Packages), the files from this repo.  
 . To go further, symlink this repository in Packages/User to ease git commit/related stuff
 
+Predaw color modification
+---
+
+- linehighlitght have been changed from #232323 to #353535
+- comment have been changed from #777777 to #a0a0a0
+
+these changes can be found in Packages/predawn-flo.tmTheme
+
+In sublime text:
+
+    ctrl-shift-p
+    open resource
+    predawn.tmTheme
 
 Doc
 ---
