@@ -19,8 +19,23 @@
         If complete_all_parameters is true, it will add all the possible
         parameters, if it's false, it will add only required parameters
     */
-    "complete_parameters": true,
-    "complete_all_parameters": true,
+    "complete_parameters": false,
+    "complete_all_parameters": false,
+
+    /*
+        If you set the following option as true, anaconda will complete
+        function parameters on keypress, when cursor is between function
+        brackets, independently from any other setting. It also works with
+        disabled tooltips.
+
+        Moreover you'll be able to choose at the moment of insertion, whether
+        inserting all parameters or just the required parameters.
+
+        Default keybindings (they only work between empty function brackets):
+        Tab      : insert required parameters
+        Ctrl+Tab : insert all parameters
+    */
+    "parameters_completion_on_keypress": true,
 
 
     /*
