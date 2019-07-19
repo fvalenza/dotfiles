@@ -27,3 +27,8 @@ CURRENT_DIR=$ABSOLUTE_PATH
 #         Prompt                #
 #===============================#
 . $CURRENT_DIR/prompt.bashrc
+
+if [[ -e /homelocal/fvalenza/devel/install/root_local/usr/mysql/mysql-5.7.23-linux-glibc2.12-x86_64/activate57 ]]
+then
+  . /homelocal/fvalenza/devel/install/root_local/usr/mysql/mysql-5.7.23-linux-glibc2.12-x86_64/activate57
+fi

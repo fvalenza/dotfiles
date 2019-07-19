@@ -3,9 +3,21 @@
 # Put here all environment variables
 export DEVEL_DIR='/homelocal/fvalenza/devel'
 
-export PATH=$PATH:$DEVEL_DIR/src/dotfiles/bin:$DEVEL_DIR/install/sbin:$DEVEL_DIR/install/bin
+export PATH=$PATH:$DEVEL_DIR/src/dotfiles/bin:$DEVEL_DIR/install/sbin:$DEVEL_DIR/install/bin:$DEVEL_DIR/install/root_local/usr/bin
 
+export JAVA_HOME='/homelocal/fvalenza/devel/install/root_local/usr/java/jre1.8.0_181'
 
+export MYSQL_HOME='/homelocal/fvalenza/devel/install/root_local/usr/mysql/mysql-5.7.23-linux-glibc2.12-x86_64'
+
+export OPENSF_BIN=$DEVEL_DIR/install/openSF/openSF
+
+export BEYOND_COMP_BIN='/home/fvalenza/bin'
+
+export PATH=$PATH:$OPENSF_BIN:$BEYOND_COMP_BIN
+
+# Seeps is ported to python3 but use on my pc 3.5.3 ( should be >= 3.6.0 even). 3.5.2 is installed atm and no sudo rights
+export PYTHON_353_PATH=/homelocal/fvalenza/devel/install/bin
+export PATH=$PYTHON_353_PATH:$PATH
 
 # export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/local/fvalenza/devel/install/lib64/pkgconfig:/local/fvalenza/devel/install/lib/pkgconfig:/opt/ros/hydro/lib/pkgconfig:/opt/openrobots/lib/pkgconfig
 
