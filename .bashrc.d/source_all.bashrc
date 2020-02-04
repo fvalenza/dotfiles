@@ -9,7 +9,13 @@ ABSOLUTE_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CURRENT_DIR=$ABSOLUTE_PATH
 
 #===============================#
-#   Enviroment Variables        #
+#            BASHRC             #
+#===============================#
+. $CURRENT_DIR/.bashrc
+
+
+#===============================#
+#   Environment Variables       #
 #===============================#
 . $CURRENT_DIR/env.bashrc
 
