@@ -3,6 +3,8 @@
 # Put here all environment variables
 export DEVEL_DIR='/home/fva/devel'
 
+export GIT_EDITOR=vim
+
 export PATH=$PATH:$DEVEL_DIR/src/dotfiles/bin:$DEVEL_DIR/install/sbin:$DEVEL_DIR/install/bin
 
 
