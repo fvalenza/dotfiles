@@ -3,12 +3,18 @@
 # Put here all environment variables
 export DEVEL_DIR='/home/fva/devel'
 
+export PROJ_DIR_LINUX=$DEVEL_DIR/src
+export PROJ_DIR_WINDOWS='/media/sf_home/Documents/src'
+
 export DOTFILES_DIR=$DEVEL_DIR/src/dotfiles
 
 export GIT_EDITOR=vim
 
 export PATH=$PATH:$DEVEL_DIR/src/dotfiles/bin:$DEVEL_DIR/install/sbin:$DEVEL_DIR/install/bin
 
+export PATH=$PATH:/opt/scle/oclint/oclint-release/bin
+
+export OCLINT_BIN='oclint'
 
 
 # export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/local/fvalenza/devel/install/lib64/pkgconfig:/local/fvalenza/devel/install/lib/pkgconfig:/opt/ros/hydro/lib/pkgconfig:/opt/openrobots/lib/pkgconfig

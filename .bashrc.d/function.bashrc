@@ -57,3 +57,42 @@ function sn() {
 		subl -n "$@";
 	fi;
 }
+
+function istoolchainsourced() {
+	if [[ -v NM ]]; then
+		echo "TRUE";
+	else
+		echo "FALSE";
+	fi;
+}
+
+function sync_project_to_windows() {
+	result=${PWD##*/}
+	from_linux=$PROJ_DIR_LINUX/$result/
+	to_windows=$PROJ_DIR_WINDOWS/$result
+	echo $from_linux
+	echo $to_windows
+	if [ ! -d "$to_windows" ]; then
+  		echo "${to_windows} does not exist. Abort rsync"
+	else
+		rsync -avu --delete "${from_linux}" "${to_windows}"
+		echo "rsync to windows finished"
+	fi
+}
+alias syncwindowsfromlinux=sync_project_to_windows
+
+
+function sync_project_to_linux() {
+	result=${PWD##*/}
+	from_windows=$PROJ_DIR_WINDOWS/$result/
+	to_linux=$PROJ_DIR_LINUX/$result
+	echo $from_windows
+	echo $to_linux
+	if [ ! -d "$from_windows" ]; then
+  		echo "${from_windows} does not exist. Abort rsync"
+	else
+		rsync -avu --delete "${from_windows}" "${to_linux}"
+		echo "rsync to linux finished"
+	fi
+}
+alias synclinuxfromwindows=sync_project_to_linux
