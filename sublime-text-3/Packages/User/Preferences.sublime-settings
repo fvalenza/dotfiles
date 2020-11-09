@@ -5,6 +5,7 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Predawn/predawn.tmTheme",
 	"draw_minimap_border": true,
+	"always_show_minimap_viewport": true
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"folder_exclude_patterns":
