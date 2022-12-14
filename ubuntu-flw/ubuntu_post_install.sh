@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+########################################################################################################################
+#  Preparatory setup
+########################################################################################################################
+
 # Check if Script is Run as Root
 if [[ $EUID -ne 0 ]]; then
   echo "You must be a root user to run this script, please run sudo ./install.sh" 2>&1
@@ -7,21 +12,18 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 username=$(id -u -n 1000)
-builddir=$(pwd)
-develdir=/home/$username/root-filetree/devel
-tmpinstalldir=/home/$username/tmp
-logfile=$builddir/post-install.log
+# builddir=$(pwd)
+userhome=/home/$username
+rootftdir=$userhome/root-filetree
+develdir=$rootftdir/devel
+tmpinstalldir=$userhome/tmp/ubuntu-install
+logfile=$tmpinstalldir/post-install.log
 
 
-# Update packages list and update system
-apt update
-apt upgrade -y
+########################################################################################################################
+#  Utility functions
+########################################################################################################################
 
-
-mkdir -p $tmpinstalldir && cd $tmpinstalldir
-
-
-# function to run command as non-root user
 run_as_user() {
   sudo -u $username bash -c "$1";
 }
@@ -49,18 +51,41 @@ log_install_step ()
   log_step $* | tee $logfile
 }
 
+########################################################################################################################
+# Root-filetree creation
+########################################################################################################################
 
-# Remove snap "bloats"
-log_install_step "Remove firefox and thunderbird"
-snap remove firefox
-apt purge -y thunderbird*
-apt purge -y gnome-games gnome-{mahjongg,mines,sudoku}
-apt autoremove -y
+# TODO. + set DEVEL_DIR, cdd alias, INSTALL_DIR
+cd $userhome
+run_as_user "mkdir -p root-filetree";
+cd root-filetree
+run_as_user "mkdir -p archives audio devel documents Games images litterature softwares videos";
+cd audio
+run_as_user "mkdir -p music podcast";
+cd ../devel
+run_as_user "mkdir -p book external-src install notes src";
+cd ../images
+run_as_user "mkdir -p artwork charts photos screenshots";
+cd artwork
+run_as_user "mkdir -p wallpaper";
+cd ../../litterature
+run_as_user "mkdir -p book partitions user-manuals";
 
+########################################################################################################################
+# Beginning of Installation
+########################################################################################################################
 
+mkdir -p $tmpinstalldir && cd $tmpinstalldir
 
+#----------------------------------------#
+# Update packages list and update system #
+#----------------------------------------#
+apt update
+apt upgrade -y
 
-## Install utilities to facilitate installation ( they are useful anyway )
+#-------------------------------------------------------------------------#
+# Install utilities to facilitate installation ( they are useful anyway ) #
+#-------------------------------------------------------------------------#
 log_install_step "Install wget curl  and nala "
 
 apt install -y wget apt-transport-https curl
@@ -70,12 +95,28 @@ apt update
 apt install -y nala
 
 
-## Install packages that requires EULA agreement
+#----------------------#
+# Remove snap "bloats" #
+#----------------------#
+log_install_step "Remove firefox and thunderbird"
 
+snap remove firefox
+apt purge -y thunderbird*
+apt purge -y gnome-games gnome-{mahjongg,mines,sudoku}
+apt autoremove -y
+
+#-----------------------------------------------#
+# Install packages that requires EULA agreement #
+#-----------------------------------------------#
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 apt-get install -y  ttf-mscorefonts-installer
 
+
+#-----------------------------------------#
+# Install packages from ubuntu repository #
+#-----------------------------------------#
 log_install_step "Nala Install of: utilities (CLI) / media / tools / dev tools / desktop environment"
+
 # Install utiliies CLI
 nala install -y terminator htop bashtop neofetch tldr autojump
 # and utilities media
@@ -91,13 +132,14 @@ nala install -y gnome-tweaks gnome-shell-extension-manager gnome-shell-extension
   # gnome-themes-extra
 
 
+#---------------#
+# Extra Install #
+#---------------#
 log_install_step " Extra Installs "
 
 # Sublime text 4 + sublime merge
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-
-
 
 # Obsidian Markdown Editor
 wget -O obsidian.deb https://github.com/obsidianmd/obsidian-releases/releases/download/v1.0.3/obsidian_1.0.3_amd64.deb
@@ -125,36 +167,37 @@ nala install -y ./qwerty-fr.deb
 # wget -O itch-setup "https://itch.io/app/download?platform=linux"
 # chmod +x itch-setup && ./itch-setup # attention sudo ou pas...
 
+#------------------------------#
+# Get the dotfiles from github #
+#------------------------------#
+cd $develdir/src
 
-## Desktop environment Configuration
+run_as_user "git clone --recursive https://github.com/fvalenza/dotfiles";
+
+#-----------------------------------#
+# Desktop environment Configuration #
+#-----------------------------------#
+
+# source ./gnome-config-nordic.sh
 
 
-## Packages & Programs Configuration
+#-----------------------------------#
+# Packages & Programs Configuration #
+#-----------------------------------#
+
+# TODO. put it in qnother script ?
 git config --global user.email "florian.valenza@gmail.com"
 git config --global user.name "Florian Valenza"
 # git config --global credential.helper store
+echo " Do not forget to run \"git config --global credential.helper store\" to setup Token "
 
 tldr -u # updqte tldr database
 
 
-
-cd $builddir
+#----------------------#
+# Clean before leaving #
+#----------------------#
 rm -rf $tmpinstalldir
 
-## Create root-filetree w/ devel dir
-# TODO. + set DEVEL_DIR, cdd alias, INSTALL_DIR
-cd /home/$username
-run_as_user "mkdir -p root-filetree";
-cd root-filetree
-run_as_user "mkdir -p archives audio devel documents Games images litterature softwares videos";
-cd audio
-run_as_user "mkdir -p music podcast";
-cd ../devel
-run_as_user "mkdir -p book external-src install notes src";
-cd ../images
-run_as_user "mkdir -p artwork charts photos screenshots";
-cd artwork
-run_as_user "mkdir -p wallpaper";
-cd ../../litterature
-run_as_user "mkdir -p book partitions user-manuals";
+
 
