@@ -16,6 +16,7 @@ username=$(id -u -n 1000)
 userhome=/home/$username
 rootftdir=$userhome/root-filetree
 develdir=$rootftdir/devel
+dotfilesdir=$develdir/src/dotfiles
 tmpinstalldir=$userhome/tmp/ubuntu-install
 logfile=$tmpinstalldir/post-install.log
 
@@ -178,7 +179,8 @@ run_as_user "git clone --recursive https://github.com/fvalenza/dotfiles";
 # Desktop environment Configuration #
 #-----------------------------------#
 
-# source ./gnome-config-nordic.sh
+cd $dotfilesdir
+source $dotfilesdir/ubuntu-flw/gnome-config-nordic.sh
 
 
 #-----------------------------------#

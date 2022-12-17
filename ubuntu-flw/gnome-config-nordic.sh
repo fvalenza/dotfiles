@@ -7,9 +7,13 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 username=$(id -u -n 1000)
-builddir=$(pwd)
-develdir=/home/$username/root-filetree/devel
-tmpinstalldir=/home/$username/tmp
+# builddir=$(pwd)
+userhome=/home/$username
+rootftdir=$userhome/root-filetree
+develdir=$rootftdir/devel
+dotfilesdir=$develdir/src/dotfiles
+tmpinstalldir=$userhome/tmp/ubuntu-install
+logfile=$tmpinstalldir/post-install.log
 
 run_as_user() {
   sudo -u $username bash -c "$1";
@@ -32,18 +36,18 @@ tar -xvf Nordic-bluish-accent-standard-buttons-v40.tar.xz
 # TODO: Mv Icons from repo to /home/$username/.icons
 
 run_as_user "mkdir -p /home/$username/root-filetree/images/artwork/icons";
-cd /home/$username/root-filetree/images/artwork/icons
+cd $rootftdir/images/artwork/icons
 run_as_user "git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git";
 cd Tela-circle-icon-theme
-run_as_user "/bin/bash ./install.sh \"-a\"";
+run_as_user "/bin/bash ./install.sh \"orange\"";
 
 # Get Nordic cursor
 run_as_user "mkdir -p /home/$username/.icons";
-tar -xvf ./assets/cursors/Nordic-cursors.tar.xz --directory ./assets/cursors
-run_as_user "cp -R ./assets/cursors/Nordic-cursors /home/$username/.icons";
+tar -xvf $dotfilesdir/ubuntu-flw/assets/cursors/Nordic-cursors.tar.xz --directory $dotfilesdir/ubuntu-flw/assets/cursors
+run_as_user "cp -R $dotfilesdir/ubuntu-flw/assets/cursors/Nordic-cursors /home/$username/.icons";
 
 # Get Wallpaper Cyber city
-run_as_user "cp ./assets/images/aciwnsk876t91.jpg /home/$username/root-filetree/images/artwork/wallpaper";
+run_as_user "cp $dotfilesdir/ubuntu-flw/assets/images/aciwnsk876t91.jpg $rootftdir/images/artwork/wallpaper";
 
 
 
@@ -67,5 +71,5 @@ gsettings set org.gnome.desktop.interface cursor-theme Nordic-cursors
 
 
 # Set Wallpaper
-gsettings set org.gnome.desktop.background picture-uri file:///home/$username/root-filetree/images/artwork/wallpaper/aciwnsk876t91.jpg
+gsettings set org.gnome.desktop.background picture-uri file://$rootftdir/images/artwork/wallpaper/aciwnsk876t91.jpg
 
