@@ -193,7 +193,7 @@ git config --global user.name "Florian Valenza"
 # git config --global credential.helper store
 echo " Do not forget to run \"git config --global credential.helper store\" to setup Token "
 
-tldr -u # updqte tldr database
+run_as_user "tldr -u"; # updqte tldr database
 
 
 #----------------------#
