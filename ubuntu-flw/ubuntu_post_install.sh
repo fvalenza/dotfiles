@@ -89,11 +89,7 @@ apt upgrade -y
 #-------------------------------------------------------------------------#
 log_install_step "Install wget curl  and nala "
 
-apt install -y wget apt-transport-https curl
-wget -qO- https://deb.volian.org/volian/scar.key | gpg --dearmor | dd of=/usr/share/keyrings/volian-archive-scar.gpg  # (sudo wget... if manual)
-echo "deb [signed-by=/usr/share/keyrings/volian-archive-scar.gpg arch=amd64] https://deb.volian.org/volian/ scar main" > /etc/apt/sources.list.d/volian-archive-scar.list
-apt update
-apt install -y nala
+apt install -y wget apt-transport-https curl nala
 
 
 #----------------------#
