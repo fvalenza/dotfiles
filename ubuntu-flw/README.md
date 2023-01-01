@@ -5,7 +5,7 @@
 After fresh install of Ubuntu, run the following:
 
 ```sh
-wget https://raw.githubusercontent.com/fvalenza/dotfiles/main/ubuntu-flw/ubuntu_post_install.sh && \
-chmod +x ubuntu_post_install.sh && \
-sudo ./ubuntu_post_install.sh
+wget https://raw.githubusercontent.com/fvalenza/dotfiles/main/ubuntu-flw/post-installation-scripts/post-install.sh && \
+chmod +x post-install.sh && \
+sudo ./post-install.sh
 ```
