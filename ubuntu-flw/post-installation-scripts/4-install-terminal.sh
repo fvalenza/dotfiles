@@ -16,3 +16,9 @@ rootftdir=$userhome/root-filetree
 develdir=$rootftdir/devel
 dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
+
+nala install -y kitty
+
+cp -R $dotfilesdir/ubuntu-flw/dotconfig/kitty $userhome/.config
+
+chown -R "$username:$username" "$userhome/.config/kitty"

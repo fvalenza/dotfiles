@@ -36,7 +36,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 nala update
 
 
-nala install -y brave-browser kitty htop bashtop neofetch tldr autojump
+nala install -y brave-browser htop bashtop neofetch tldr autojump
 
 # # qwerty-fr keyboard layout
 # wget -O qwerty-fr.deb https://github.com/qwerty-fr/qwerty-fr/releases/download/v0.7.2/qwerty-fr_0.7.2_linux.deb
