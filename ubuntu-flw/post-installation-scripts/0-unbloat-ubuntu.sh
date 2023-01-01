@@ -25,8 +25,7 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 # Remove firefox, thunderbird, gnome-games, snap
 
 snap remove firefox
-apt purge -y thunderbird*
-apt purge -y gnome-games gnome-{mahjongg,mines,sudoku}
-apt autoremove -y
+nala purge -y thunderbird* gnome-games gnome-{mahjongg,mines,sudoku}
+nala autoremove -y
 
-#todo remove snap
+#todo remove snap ?

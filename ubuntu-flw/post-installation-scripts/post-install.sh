@@ -84,7 +84,9 @@ run_as_user "git clone --recursive https://github.com/fvalenza/dotfiles";
 
 cd $postinstallscriptsdir
 
+# WARNING where to put the downloaded deb files
 # https://stackoverflow.com/a/8352939
+
 # /bin/bash 0-unbloat-ubuntu.sh
 # /bin/bash 1-install-essentials.sh
 # /bin/bash 2-install-app-launcher.sh
