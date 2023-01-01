@@ -26,13 +26,6 @@ run_as_user() {
 }
 
 
-
-#-------------------------------------------------------------------------#
-# Install utilities to facilitate installation ( they are useful anyway ) #
-#-------------------------------------------------------------------------#
-apt install -y wget apt-transport-https curl git nala
-
-
 #-----------------------#
 # Install utilities CLI #
 #-----------------------#

@@ -17,6 +17,14 @@ develdir=$rootftdir/devel
 dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
+#--------------------#
+#  Utility functions #
+#--------------------#
+
+run_as_user() {
+  sudo -u $username bash -c "$1";
+}
+
 #----------------------------------------#
 # Update packages list and update system #
 #----------------------------------------#
@@ -24,25 +32,43 @@ apt update
 apt upgrade -y
 
 
+#-------------------------------------------------------------------------#
+# Install utilities to facilitate installation ( they are useful anyway ) #
+#-------------------------------------------------------------------------#
+apt install -y wget apt-transport-https curl git nala
+
 #------------------------#
 # Root-filetree creation #
 #------------------------#
 
 # TODO. + set DEVEL_DIR, cdd alias, INSTALL_DIR
-cd $userhome
-run_as_user "mkdir -p root-filetree";
-cd root-filetree
-run_as_user "mkdir -p archives audio devel documents Games images litterature softwares videos";
-cd audio
-run_as_user "mkdir -p music podcast";
-cd ../devel
-run_as_user "mkdir -p book external-src install notes src";
-cd ../images
-run_as_user "mkdir -p artwork charts photos screenshots";
-cd artwork
-run_as_user "mkdir -p wallpaper";
-cd ../../litterature
-run_as_user "mkdir -p book partitions user-manuals";
+mkdir -p $userhome/root-filetree
+mkdir -p $userhome/root-filetree/archives
+mkdir -p $userhome/root-filetree/audio
+mkdir -p $userhome/root-filetree/audio/music
+mkdir -p $userhome/root-filetree/audio/podcast
+mkdir -p $userhome/root-filetree/devel
+mkdir -p $userhome/root-filetree/devel/book
+mkdir -p $userhome/root-filetree/devel/external-src
+mkdir -p $userhome/root-filetree/devel/install
+mkdir -p $userhome/root-filetree/devel/notes
+mkdir -p $userhome/root-filetree/devel/src
+mkdir -p $userhome/root-filetree/documents
+mkdir -p $userhome/root-filetree/games
+mkdir -p $userhome/root-filetree/images
+mkdir -p $userhome/root-filetree/images/artwork
+mkdir -p $userhome/root-filetree/images/artwork/wallpaper
+mkdir -p $userhome/root-filetree/images/charts
+mkdir -p $userhome/root-filetree/images/photos
+mkdir -p $userhome/root-filetree/images/screenshots
+mkdir -p $userhome/root-filetree/litterature
+mkdir -p $userhome/root-filetree/litterature/book
+mkdir -p $userhome/root-filetree/litterature/partitions
+mkdir -p $userhome/root-filetree/litterature/user-manuals
+mkdir -p $userhome/root-filetree/softwares
+mkdir -p $userhome/root-filetree/videos
+
+chown -R "$username:$username" "$userhome"
 
 #------------------------------#
 # Get the dotfiles from github #
