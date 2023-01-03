@@ -62,12 +62,12 @@ mkdir -p /home/$username/.themes
 cd /home/$username/.themes
 
 # Get Everforest theme
-git clone https://github.com/theory-of-everything/everforest-gtk ~/.themes/everforest-gtk
-# unzip $assetsdir/themes/everforest-gtk.zip -d "/home/$username/.themes"
+# git clone https://github.com/theory-of-everything/everforest-gtk /home/$username/.themes/everforest-gtk
+unzip $assetsdir/themes/everforest-gtk.zip -d "/home/$username/.themes"
 
 # Get Griffith-Femto shell theme
-git clone https://github.com/Griffith-Femto/forest-dots ~/.themes/forest-dots
-# unzip $assetsdir/themes/forest-dots.zip -d "/home/$username/.themes"
+# git clone https://github.com/Griffith-Femto/forest-dots /home/$username/.themes/forest-dots
+unzip $assetsdir/themes/Forest.zip -d "/home/$username/.themes"
 
 
 chown -R "$username:$username" "$userhome/.themes"

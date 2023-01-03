@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if Script is not Run as Root
-if [[ $EUID -e 0 ]]; then
+if [[ $EUID -eq 0 ]]; then
   echo "You must NOT be a root user to run this script, please run ./9-gsettings.sh" 2>&1
   exit 1
 fi
