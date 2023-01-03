@@ -17,8 +17,23 @@ develdir=$rootftdir/devel
 dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
-nala install -y kitty
 
-cp -R $dotfilesdir/ubuntu-flw/dotconfig/kitty $userhome/.config
+#--------------------#
+# Bash Configuration #
+#--------------------#
 
-chown -R "$username:$username" "$userhome/.config/kitty"
+#------------------------#
+# Alacritty Installation #
+#------------------------#
+add-apt-repository -y ppa:aslatter/ppa
+nala update
+nala install -y alacritty
+
+
+#-------------------------#
+# Alacritty Configuration #
+#-------------------------#
+
+cp -R $dotfilesdir/ubuntu-flw/dotconfig/alacritty $userhome/.config
+
+chown -R "$username:$username" "$userhome/.config/alacritty"

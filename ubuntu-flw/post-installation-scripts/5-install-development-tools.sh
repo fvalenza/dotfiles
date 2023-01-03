@@ -18,7 +18,9 @@ dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 
-
+#-----------------------#
+# Install xxx #
+#-----------------------#
 
 nala install -y build-essential cmake neovim rust-all texlive-latex-extra
 

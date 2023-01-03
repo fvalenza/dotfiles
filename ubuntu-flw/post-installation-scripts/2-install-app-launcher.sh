@@ -18,7 +18,7 @@ dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 
-add-apt-repository ppa:agornostal/ulauncher -y
+add-apt-repository -y ppa:agornostal/ulauncher
 nala update
 nala install -y ulauncher
 
