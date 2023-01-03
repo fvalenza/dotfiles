@@ -97,3 +97,4 @@ cd $postinstallscriptsdir
 # /bin/bash 6-install-media.sh
 # /bin/bash 7-install-gaming.sh
 # /bin/bash 8-install-tools.sh
+# /bin/bash 9-gsettings.sh
