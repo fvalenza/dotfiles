@@ -29,7 +29,7 @@ nala install -y ulauncher
 nala install -y  gpaste
 
 # For github extension
-pip install pygithub=~1.55.0 requests
+pip install pygithub~=1.55.0 requests
 pip3 install github --user
 
 # For translate-shell

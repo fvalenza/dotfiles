@@ -22,6 +22,7 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 # Bash Configuration #
 #--------------------#
 
+
 #------------------------#
 # Alacritty Installation #
 #------------------------#

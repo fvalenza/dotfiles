@@ -56,9 +56,9 @@ gnome-extensions disable window-list@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable windowsNavigator@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable workspace-indicator@gnome-shell-extensions.gcampax.github.com
 
-
 # aylur /  conky / another window session manager ?
-
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
 
 #------------------------------------------#
 # Desktop environment Configuration - sddm #

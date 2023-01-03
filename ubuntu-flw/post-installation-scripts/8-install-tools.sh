@@ -18,5 +18,5 @@ dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 
-# Q mettre dans essentials ?
+# A mettre dans essentials ?
 nala install -y keepassxc gpaint gthumb
