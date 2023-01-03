@@ -31,9 +31,10 @@ run_as_user() {
 
 nala install -y gnome-tweaks gnome-shell-extension-manager gnome-shell-extensions
 
-mkdir -p /home/$username/.local/share/gnome-shell/extensions
-cp -r $dotfilesdir/ubuntu-flw/dotlocal/share/gnome-shell/extensions/* /home/$username/.local/share/gnome-shell/extensions
-chown -R "$username:$username" "$userhome/.local"
+## TOFIX if not wanting to use "extension sync"
+# mkdir -p /home/$username/.local/share/gnome-shell/extensions
+# cp -r $dotfilesdir/ubuntu-flw/dotlocal/share/gnome-shell/extensions/* /home/$username/.local/share/gnome-shell/extensions
+# chown -R "$username:$username" "$userhome/.local"
 
 
 
