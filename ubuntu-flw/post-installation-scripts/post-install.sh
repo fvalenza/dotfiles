@@ -51,6 +51,7 @@ mkdir -p $userhome/root-filetree/devel
 mkdir -p $userhome/root-filetree/devel/book
 mkdir -p $userhome/root-filetree/devel/external-src
 mkdir -p $userhome/root-filetree/devel/install
+mkdir -p $userhome/root-filetree/devel/install/bin
 mkdir -p $userhome/root-filetree/devel/notes
 mkdir -p $userhome/root-filetree/devel/src
 mkdir -p $userhome/root-filetree/documents

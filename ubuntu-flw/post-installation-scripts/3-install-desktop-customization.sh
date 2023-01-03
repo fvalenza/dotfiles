@@ -30,11 +30,35 @@ run_as_user() {
 #-----------------------------------------------#
 
 nala install -y gnome-tweaks gnome-shell-extension-manager gnome-shell-extensions
-# gnome extensions + top panel (aylur ? )
-# + forge
-# + qnother window session manager ??
-# + userthemes
-#  + horizontal workspace indicator
+
+mkdir -p /home/$username/.local/share/gnome-shell/extensions
+cp -r $dotfilesdir/ubuntu-flw/dotlocal/share/gnome-shell/extensions/* /home/$username/.local/share/gnome-shell/extensions
+chown -R "$username:$username" "$userhome/.local"
+
+gnome-extensions enable blur-my-shell@aunetx
+gnome-extensions enable forge@jmmaranan.com
+gnome-extensions enable horizontal-workspace-indicator@tty2.io
+gnome-extensions enable just-perfection-desktop@just-perfection
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+
+gnome-extensions enable ubuntu-appindicators@ubuntu.com
+
+gnome-extensions disable apps-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable drive-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable launch-new-instance@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable places-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable ding@rastersoft.com
+gnome-extensions disable ubuntu-dock@ubuntu.com
+gnome-extensions disable window-list@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable windowsNavigator@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable workspace-indicator@gnome-shell-extensions.gcampax.github.com
+
+
+# aylur /  conky / another window session manager ?
+
 
 #------------------------------------------#
 # Desktop environment Configuration - sddm #
