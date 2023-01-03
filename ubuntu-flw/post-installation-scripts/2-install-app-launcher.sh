@@ -22,6 +22,27 @@ add-apt-repository -y ppa:agornostal/ulauncher
 nala update
 nala install -y ulauncher
 
+
+# Install dependencies for my extension list
+
+# For clipboard extension
+nala install -y  gpaste
+
+# For github extension
+pip install pygithub=~1.55.0 requests
+pip3 install github --user
+
+# For translate-shell
+cd $develdir/external-src
+git clone https://github.com/soimort/translate-shell
+cd translate-shell
+make
+make install
+# wget git.io/trans -P $userhome/root-filetree/devel/install/bin
+# chmod +x $userhome/root-filetree/devel/install/bin/trans
+# chown -R "$username:$username" "$userhome/root-filetree/devel/install/bin/"
+
+
 # copy configuration files
 cp -R $dotfilesdir/ubuntu-flw/dotconfig/ulauncher $userhome/.config
 

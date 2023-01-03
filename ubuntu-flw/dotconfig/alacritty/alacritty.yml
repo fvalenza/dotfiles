@@ -1,4 +1,7 @@
-# Define
+window:
+  opacity: 0.85
+  # decorations: none
+
 schemes:
   everforest_dark_hard: &everforest_dark_hard
     primary:
