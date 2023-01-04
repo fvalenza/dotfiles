@@ -22,6 +22,32 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 # Bash Configuration #
 #--------------------#
 
+# copy .bashrc files into ~/dotbashrc
+mkdir -p $userhome/dotbashrc
+cp -R dotfilesdir=$develdir/src/dotfiles/dotbashrc/. $userhome/dotbashrc
+
+chown -R "$username:$username" "$userhome/dotbashrc"
+
+# add to ~/.bashrc to source my personal configurations
+
+MYBASHRC_CONFIG=$userhome/dotbashrc/my-bashrc-config.sh
+SOURCE_MYBASHRC_CONFIG_CMD="if [ -f $MYBASHRC_CONFIG ]; then source $MYBASHRC_CONFIG; fi"
+
+if [[ -f ~/.bashrc ]]
+then
+  if grep -Fxq "$SOURCE_MYBASHRC_CONFIG_CMD" ~/.bashrc
+  then
+      # bashrc already setup
+      :
+  else
+      echo $SOURCE_MYBASHRC_CONFIG_CMD >> $userhome/.bashrc
+  fi
+else
+  cp my-default-bashrc $userhome
+  mv $userhome/my-default-bashrc $userhome/.bashrc
+  chown "$username:$username" "$userhome/.bashrc"
+fi
+
 
 #------------------------#
 # Alacritty Installation #
