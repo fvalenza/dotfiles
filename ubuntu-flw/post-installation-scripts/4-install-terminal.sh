@@ -24,7 +24,7 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 # copy .bashrc files into ~/dotbashrc
 mkdir -p $userhome/dotbashrc
-cp -R dotfilesdir=$develdir/src/dotfiles/dotbashrc/. $userhome/dotbashrc
+cp -R $dotfilesdir/dotbashrc/. $userhome/dotbashrc
 
 chown -R "$username:$username" "$userhome/dotbashrc"
 
