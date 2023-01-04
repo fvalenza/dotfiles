@@ -18,6 +18,8 @@ dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 
+##TODO: Faire des fonctions ? Une fonction "install" (qui installe alacritty puis fait appel a update) et une fonction "update_bash_config" ? Dans le cas ou j'update les fichiers bashrc
+
 #--------------------#
 # Bash Configuration #
 #--------------------#
@@ -28,8 +30,8 @@ cp -R $dotfilesdir/dotbashrc/. $userhome/dotbashrc
 
 chown -R "$username:$username" "$userhome/dotbashrc"
 
-# add to ~/.bashrc to source my personal configurations
 
+# add to ~/.bashrc to source my personal configurations
 MYBASHRC_CONFIG=$userhome/dotbashrc/my-bashrc-config.sh
 SOURCE_MYBASHRC_CONFIG_CMD="if [ -f $MYBASHRC_CONFIG ]; then source $MYBASHRC_CONFIG; fi"
 
