@@ -7,8 +7,10 @@ develdir=$rootftdir/devel
 dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
-export DEVEL_DIR='$develdir'
+
+export MY_ROOT_FILETREE=$rootftdir
+export DEVEL_DIR=$develdir
 
 export GIT_EDITOR=vim
 
-export PATH=$PATH:$DEVEL_DIR/src/dotfiles/bin:$DEVEL_DIR/install/sbin:$DEVEL_DIR/install/bin
+export PATH=$PATH:$DEVEL_DIR/install/bin
