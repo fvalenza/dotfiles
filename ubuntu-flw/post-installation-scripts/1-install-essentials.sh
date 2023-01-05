@@ -48,8 +48,9 @@ nala install -y brave-browser htop bashtop neofetch tldr autojump unzip make pyt
 
 git config --global user.email "florian.valenza@gmail.com"
 git config --global user.name "Florian Valenza"
-# git config --global credential.helper store
-echo " Do not forget to run \"git config --global credential.helper store\" to setup Token "
+git config --global credential.helper cache
+echo " Do not forget to run \"git config --global credential.helper store\" if you want to remember token after first usage. Warning : plan-text file used for storage. Better to use ssh. Caching enabled "
+# https://stackoverflow.com/questions/35942754/how-can-i-save-username-and-password-in-git   or use cache  https://stackoverflow.com/a/51327559
 
 run_as_user "tldr -u"; # updqte tldr database
 

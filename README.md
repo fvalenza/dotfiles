@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/fvalenza/dotfiles/main/ubuntu-flw/post-in
 Then install the needed components
 
 ```sh
-cd ~/root-filetree/src/dotfiles/ubuntu-flw/post-installation-scripts
+cd ~/root-filetree/devel/src/dotfiles/ubuntu-flw/post-installation-scripts
 ./complete-install.sh
 # or sudo ./<component>.sh etc until number 8
 ```
@@ -22,6 +22,7 @@ Nota: Try to create the script complete-install.sh with [this](https://stackover
 Before executing 9-gsettings.sh, install through extension manager the extension [extension sync](https://extensions.gnome.org/extension/1486/extensions-sync/) with following settings and download extensions:
 
 ```
+# only sync extensions, not keybinding or tweaks
 gist_id = 20ff5ba7a2fdd62bd1e295ef687c5a7b
 token = ($secret) # To get from github
 ```

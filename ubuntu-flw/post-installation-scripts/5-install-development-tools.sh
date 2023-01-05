@@ -43,6 +43,6 @@ nala install -y ./obsidian.deb
 #------------------------#
 
 mkdir -p $develdir/notes/.obsidian
-cp -R $dotfilesdir/dotobsidian/. $develdir/notes/.obsidian
+cp -R $dotfilesdir/ubuntu-flw/dotobsidian/. $develdir/notes/.obsidian
 
 chown -R "$username:$username" "$develdir/notes/.obsidian"

@@ -40,22 +40,22 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 # gnome-extensions enable forge@jmmaranan.com
 # gnome-extensions enable horizontal-workspace-indicator@tty2.io
 # gnome-extensions enable just-perfection-desktop@just-perfection
-# gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+gnome-extensions enable ubuntu-appindicators@ubuntu.com
 
-# gnome-extensions enable ubuntu-appindicators@ubuntu.com
 
-# gnome-extensions disable apps-menu@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable drive-menu@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable launch-new-instance@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable places-menu@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable ding@rastersoft.com
-# gnome-extensions disable ubuntu-dock@ubuntu.com
-# gnome-extensions disable window-list@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable windowsNavigator@gnome-shell-extensions.gcampax.github.com
-# gnome-extensions disable workspace-indicator@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable apps-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable drive-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable launch-new-instance@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable places-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable ding@rastersoft.com
+gnome-extensions disable ubuntu-dock@ubuntu.com
+gnome-extensions disable window-list@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable windowsNavigator@gnome-shell-extensions.gcampax.github.com
+gnome-extensions disable workspace-indicator@gnome-shell-extensions.gcampax.github.com
 
 #-----------------------------------------#
 # 3-desktop-customization | gnome theming #
@@ -82,3 +82,9 @@ gsettings set org.gnome.desktop.interface icon-theme Tela-circle-green
 
 # Set Wallpaper
 gsettings set org.gnome.desktop.background picture-uri file://$rootftdir/images/artwork/wallpaper/wallhaven-l3v7ky_1920x1080.png
+
+
+
+## General keybind
+#gsettings set org.gnome.mutter overlay-key '' # Can be a good idea to keep the overlay on Super_L to use it as an alt-tab persistent without holding alt key
+

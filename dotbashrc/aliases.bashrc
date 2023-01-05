@@ -35,6 +35,8 @@ alias ..='cd ..;'
 alias ..2='cd ../..;'
 alias ..3='cd ../../..;'
 alias cdd='cd $DEVEL_DIR' # to remove if i get confortqble with 'devel'
+alias src='cd $MY_ROOT_FILETREE/devel/src'
+alias install='cd $MY_ROOT_FILETREE/devel/install'
 
 
 # Common project directories ## TODO

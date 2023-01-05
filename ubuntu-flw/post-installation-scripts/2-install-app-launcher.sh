@@ -47,15 +47,13 @@ make install
 cp -R $dotfilesdir/ubuntu-flw/dotconfig/ulauncher $userhome/.config
 
 # Run Ulauncher on startup
-systemctl --user enable --now ulauncher
+cd /usr/share/applications/
+cp ulauncher.desktop ~/.config/autostart/
+
+chown -R "$username:$username" "$userhome/.config/ulauncher"
 
 # Fix hotkey issue in wayland  https://github.com/Ulauncher/Ulauncher/wiki/Hotkey-In-Wayland
 nala install -y wmctrl
 # ulauncher hotkey in ulauncher settings is already set to something i don't use in the settings.json
-# Add keybind in settings.. (not the ulauncher ones)
 
-
-chown -R "$username:$username" "$userhome/.config/ulauncher"
-
-
-
+echo "Do not forget to start ulauncher after 9-gsettings script, so that ctrl-space keybind can work"
