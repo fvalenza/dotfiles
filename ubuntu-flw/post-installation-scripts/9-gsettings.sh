@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# https://askubuntu.com/questions/971067/how-can-i-script-the-settings-made-by-gnome-tweak-tool
+
+
 # Check if Script is not Run as Root
 if [[ $EUID -eq 0 ]]; then
   echo "You must NOT be a root user to run this script, please run ./9-gsettings.sh" 2>&1
