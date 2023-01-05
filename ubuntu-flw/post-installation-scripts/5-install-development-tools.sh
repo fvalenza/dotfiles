@@ -35,3 +35,14 @@ wget -O obsidian.deb https://github.com/obsidianmd/obsidian-releases/releases/do
 nala update
 nala install -y sublime-text sublime-merge
 nala install -y ./obsidian.deb
+
+
+
+#------------------------#
+# Obsidian configuration #
+#------------------------#
+
+mkdir -p $develdir/notes/.obsidian
+cp -R $dotfilesdir/dotobsidian/. $develdir/notes/.obsidian
+
+chown -R "$username:$username" "$develdir/notes/.obsidian"
