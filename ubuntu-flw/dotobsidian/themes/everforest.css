@@ -25,7 +25,7 @@
 /* 6. Notion Colour Blocks
 /* 7. In-document header (scrolls with the document) [remove for compatibility with Andy's mode]
 /*     7.1. Adjustments for non-in-document headers (graphs, etc)\
-/*     7.2. Active pane border
+/*     7.2. Active pane border 
 /*     7.3. Misc fixes
 /* 8. Tags
 /*     8.1. Tag custom colours
@@ -105,7 +105,7 @@ body {
     --bg_yellow_light:      #faedcd;
 
     --fg-light:       #5c6a72;
-
+    
     --light-red:     #f85552;
     --light-orange:  #f57d26;
     --light-yellow:  #bf983d;
@@ -202,12 +202,12 @@ body {
 .view-header-title {
     font-weight: 700;
   }
-
+  
   /* 3.1. Title bar */
   .titlebar {
     background-color: var(--background-secondary-alt);
   }
-
+  
   .titlebar-inner {
     color: var(--text-normal);
   }
@@ -269,12 +269,12 @@ TAGS
     background-color: transparent;
     border: none;
   }
-
+  
   .token.tag:hover {
     background: transparent;
     color: var(--text-a-hover) !important;
   }
-
+  
   /*----------------------------------------------------------------
   TAG PILLS
   ----------------------------------------------------------------*/
@@ -286,7 +286,7 @@ TAGS
   .markdown-preview-section h4 a.tag {
     font-weight: inherit;
   }
-
+  
   .tag {
     background-color: var(--tag-base);
     border: 1px solid var(--interactive-accent);
@@ -302,27 +302,27 @@ TAGS
     border-radius: 8px;
     transition: 0.2s ease-in-out;
   }
-
+  
   .tag:hover {
     color: var(--interactive-accent);
   }
-
+  
   /*----------------------------------------------------------------
   TAG REF STYLING
   ----------------------------------------------------------------*/
-
+  
   .tag[href^="#❗️"],
   .tag[href^="#important❗️"] {
     background-color: var(--tag-base);
     border: 1px solid var(--boldred);
   }
-
+  
   .tag[href^="#📓"],
   .tag[href^="#journal📓"] {
     background-color: var(--tag-base);
     border: 1px solid var(--purple);
   }
-
+  
   .tag[href^="#🌱"],
   .tag[href^="#seedling🌱"],
   .tag[href^="#🌿"],
@@ -611,7 +611,7 @@ img
     background-color: var(--interactive-accent);
 }
 
-.checkbox-container.is-enabled:after
+.checkbox-container.is-enabled:after 
 {
     background-color: var(--bg5-dark);
 }
