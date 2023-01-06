@@ -25,7 +25,11 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 # Remove firefox, thunderbird, gnome-games, snap
 
 snap remove firefox
-nala purge -y thunderbird* gnome-games gnome-{mahjongg,mines,sudoku}
+nala purge -y thunderbird* gnome-games gnome-{mahjongg,mines,sudoku} apport-gtk
 nala autoremove -y
 
 #todo remove snap ?
+
+echo "Unbloating Ubuntu finished. Rebooting in 10 seconds"
+sleep 10
+reboot

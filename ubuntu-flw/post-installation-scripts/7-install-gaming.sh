@@ -23,6 +23,8 @@ nala install -y steam
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 nala install -y ./discord.deb
 
+rm ./discord.deb
+
 # # Install itch.io
 # Aller dans ~/Download
 # wget -O itch-setup "https://itch.io/app/download?platform=linux"

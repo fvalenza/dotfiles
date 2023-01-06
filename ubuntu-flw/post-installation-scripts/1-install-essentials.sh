@@ -41,6 +41,7 @@ nala install -y brave-browser htop bashtop neofetch tldr autojump unzip make pyt
 # # qwerty-fr keyboard layout
 # wget -O qwerty-fr.deb https://github.com/qwerty-fr/qwerty-fr/releases/download/v0.7.2/qwerty-fr_0.7.2_linux.deb
 # nala install -y ./qwerty-fr.deb
+# rm ./qwerty-fr.deb
 
 #-----------------------------------#
 # Packages & Programs Configuration #

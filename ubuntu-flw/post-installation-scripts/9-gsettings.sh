@@ -88,6 +88,9 @@ gsettings set org.gnome.desktop.background picture-uri file://$rootftdir/images/
 
 
 
+gsettings set org.gnome.nautilus.preferences  recursive-search 'never'
+gsettings set org.gnome.desktop.wm.preferences resize-with-right-button  true
+
 ## General keybind
 #gsettings set org.gnome.mutter overlay-key '' # Can be a good idea to keep the overlay on Super_L to use it as an alt-tab persistent without holding alt key
 

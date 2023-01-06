@@ -6,6 +6,11 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+run_as_user() {
+  sudo -u $username bash -c "$1";
+}
+
+
 #-------------------#
 # Preparatory setup #
 #-------------------#
@@ -35,6 +40,7 @@ wget -O obsidian.deb https://github.com/obsidianmd/obsidian-releases/releases/do
 nala update
 nala install -y sublime-text sublime-merge
 nala install -y ./obsidian.deb
+rm ./obsidian.deb
 
 
 #----------------------------#
@@ -43,9 +49,13 @@ nala install -y ./obsidian.deb
 
 rm -rf $userhome/.config/sublime-text/Packages/User
 
-ln -s $dotfilesdir/sublime-text/Packages/User $userhome/.config/sublime-text/Packages/User
+mkdir -p $userhome/.config/sublime-text/Packages/User
 
-chown -R "$username:$username" "$userhome/.config/sublime-text/Packages/User"
+cp -R $dotfilesdir/ubuntu-flw/dotconfig/sublime-text/Packages/User/. $userhome/.config/sublime-text/Packages/User
+
+chown -R "$username:$username" "$userhome/.config/sublime-text"
+
+run_as_user "cargo install rustfmt";
 
 #------------------------#
 # Obsidian configuration #
