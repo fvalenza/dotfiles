@@ -1,0 +1,58 @@
+{
+	"ignored_packages":
+	[
+		"NeoVintageous",
+		"Rust",
+		"Vintage",
+	],
+
+	// Theme and Color
+	"color_scheme": "Alabaster Dark.sublime-color-scheme",
+	// "theme": "Nexus.sublime-theme",
+
+	"font_size": 10,
+
+
+	"trim_trailing_white_space_on_save": "all",
+	"rulers":
+	[
+		80,
+		120
+	],
+	"draw_minimap_border": true,
+	"always_show_minimap_viewport": true,
+	"ensure_newline_at_eof_on_save": true,
+	// "wrap_width": 120
+
+	// tab vs spaces
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true,
+	"shift_tab_unindent": true,
+	"indent_to_bracket": true,
+
+	// Type of line endings in status bar: Windows (CRLF)/ Unix (LF) vs Mac (CR)
+	"show_line_endings": true,
+	"show_encoding": true,
+
+	"highlight_line": true,
+	"bold_folder_labels": true,
+
+	"indent_guide_options": ["solid", "draw_active_single"],
+	"auto_complete_commit_on_tab": true,
+	"neovintageous_build_version": 12700,
+	"close_windows_when_empty": false,
+	"relative_line_numbers": true,
+	"auto_complete": true,
+
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".venv",
+		"__pycache__",
+		"fuzzing_workdir"
+	],
+}

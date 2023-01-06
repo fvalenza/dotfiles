@@ -37,6 +37,15 @@ nala install -y sublime-text sublime-merge
 nala install -y ./obsidian.deb
 
 
+#----------------------------#
+# Sublime-text configuration #
+#----------------------------#
+
+rm -rf $userhome/.config/sublime-text/Packages/User
+
+ln -s $dotfilesdir/sublime-text/Packages/User $userhome/.config/sublime-text/Packages/User
+
+chown -R "$username:$username" "$userhome/.config/sublime-text/Packages/User"
 
 #------------------------#
 # Obsidian configuration #
