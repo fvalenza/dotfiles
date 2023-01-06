@@ -37,7 +37,8 @@ This component is mandatory for the others to work.
 
 #### __Component 2__
 
-After component 2 installation, <ctrl>+space keybind will not work directly. Need to wait for gsettings component to be installed + system reboot
+After component 2 installation, start ulauncher from terminal and in the settingsm enable "Start at launch"
+Nota: After component 2 installation, <ctrl>+space keybind will not work directly. Need to wait for gsettings component to be installed + system reboot
 
 #### __Component 5__
 
