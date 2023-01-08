@@ -38,11 +38,6 @@ nala install -y gnome-tweaks gnome-shell-extension-manager gnome-shell-extension
 
 
 
-#------------------------------------------#
-# Desktop environment Configuration - sddm #
-#------------------------------------------#
-
-
 #---------------------------------------------------#
 # Desktop environment Configuration - Install fonts #
 #---------------------------------------------------#
@@ -108,4 +103,22 @@ run_as_user "/bin/bash ./install.sh \"green\"";
 cp $dotfilesdir/ubuntu-flw/assets/images/wallhaven-l3v7ky_1920x1080.png $rootftdir/images/artwork/wallpaper
 chown -R "$username:$username" "$rootftdir/images"
 
+
+
+#------------------------------------------#
+# Desktop environment Configuration - sddm #
+#------------------------------------------#
+
+
+#-------------------------------------------#
+# Desktop environment Configuration - conky #
+#-------------------------------------------#
+
+add-apt-repository -y ppa:teejee2008/foss
+nala update
+nala insall -y conki-all lua5.4 jq conky-manager2
+
+mkdir $userhome/.config/.conky
+unzip $assetsdir/conky/Chepeus-Nunki.zip -d "$userhome/.config/.conky"
+chown -R "$username:$username" "$userhome/.config/.conky"
 
