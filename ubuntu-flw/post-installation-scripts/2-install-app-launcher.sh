@@ -48,9 +48,10 @@ cp -R $dotfilesdir/ubuntu-flw/dotconfig/ulauncher $userhome/.config
 
 # Run Ulauncher on startup
 cd /usr/share/applications/
-cp ulauncher.desktop ~/.config/autostart/
+cp ulauncher.desktop $userhome/.config/autostart/
 
 chown -R "$username:$username" "$userhome/.config/ulauncher"
+chown -R "$username:$username" "$userhome/.config/autostart"
 
 # Fix hotkey issue in wayland  https://github.com/Ulauncher/Ulauncher/wiki/Hotkey-In-Wayland
 nala install -y wmctrl

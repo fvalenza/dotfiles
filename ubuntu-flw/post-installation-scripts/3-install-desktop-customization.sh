@@ -129,5 +129,8 @@ chown -R "$username:$username" "$userhome/.config/conky"
 mv $userhome/.config/conky/Nunki/fonts/* $username/.fonts
 chown -R "$username:$username" "$userhome/.fonts"
 
+mv $assetsdir/conky/conky.desktop $userhome/.config/autostart
+chown -R "$username:$username" "$userhome/.config/autostart"
+
 run_as_user "fc-cache -fv";
 
