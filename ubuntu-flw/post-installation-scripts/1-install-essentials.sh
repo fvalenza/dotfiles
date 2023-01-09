@@ -33,11 +33,15 @@ run_as_user() {
 # Brave browser
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+# Beyond compare
+wget https://www.scootersoftware.com/bcompare-4.4.4.27058_amd64.deb
+
 nala update
 
-
 nala install -y brave-browser htop bashtop neofetch tldr autojump unzip make python3-pip gpaste tree ncal
+nala install -y ./bcompare-4.4.4.27058_amd64.deb
 
+rm ./bcompare-4.4.4.27058_amd64.deb
 # # qwerty-fr keyboard layout
 # wget -O qwerty-fr.deb https://github.com/qwerty-fr/qwerty-fr/releases/download/v0.7.2/qwerty-fr_0.7.2_linux.deb
 # nala install -y ./qwerty-fr.deb

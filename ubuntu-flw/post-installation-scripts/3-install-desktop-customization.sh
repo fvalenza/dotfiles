@@ -116,15 +116,17 @@ chown -R "$username:$username" "$rootftdir/images"
 
 add-apt-repository -y ppa:teejee2008/foss
 nala update
-nala insall -y conki-all lua5.4 jq conky-manager2
+nala insall -y conki-all lua5.4 jq
 
 mkdir $userhome/.config/conky
-unzip $assetsdir/conky/Nunki.zip -d "$userhome/.config/conky"
+# unzip $assetsdir/conky/Nunki.zip -d "$userhome/.config/conky"
+cp -R $assetsdir/conky/Nunki $userhome/.config/conky
+
 chmod +x $userhome/.config/conky/start.sh
-chmod +x $userhome/.config/conky/scripts/weather.sh
+chmod +x $userhome/.config/conky/scripts/*
 chown -R "$username:$username" "$userhome/.config/conky"
 
-mv $userhome/.config/.conky/fonts/* $username/.fonts
+mv $userhome/.config/conky/Nunki/fonts/* $username/.fonts
 chown -R "$username:$username" "$userhome/.fonts"
 
 run_as_user "fc-cache -fv";
