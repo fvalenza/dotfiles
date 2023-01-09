@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Conky
+#Exec=conky --daemonize --pause=5 -c home/fvalenza/.config/conky/Nunki/Nunki.conf
+Exec=sh "/home/fvalenza/.config/conky/Nunki/start.sh"
+Hidden=false
+NoDisplay=false
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=5
+Comment[en_IN]=
+Comment=
