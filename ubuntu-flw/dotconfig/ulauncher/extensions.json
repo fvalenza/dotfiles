@@ -103,5 +103,19 @@
         "updated_at": "2023-01-05T15:28:48.381977",
         "last_commit": "27d65fae4abc036e37a09792c8244287017dbc73",
         "last_commit_time": "2022-11-10T16:06:26"
+    },
+    "com.github.luispabon.ulauncher-virtualbox": {
+        "id": "com.github.luispabon.ulauncher-virtualbox",
+        "url": "https://github.com/luispabon/ulauncher-virtualbox",
+        "updated_at": "2023-01-19T10:30:01.292137",
+        "last_commit": "d8f495df3c7f41ee8493b207d17f06fc0372c84e",
+        "last_commit_time": "2020-09-23T01:29:15"
+    },
+    "com.github.pegoku.ulauncher-brave": {
+        "id": "com.github.pegoku.ulauncher-brave",
+        "url": "https://github.com/Pegoku/ulauncher-brave",
+        "updated_at": "2023-01-19T10:30:54.132995",
+        "last_commit": "3166aad57ff0252271c0bfe72a0a2d37f37e3b0d",
+        "last_commit_time": "2022-11-05T15:40:52"
     }
 }
