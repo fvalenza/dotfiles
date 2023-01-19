@@ -80,6 +80,32 @@ Then execute 9-gsettings.sh as user and NOT as root
 After component 9 installation, please reboot
 
 
+#### KVM
+
+From [this question about keyboard input not detected on ubuntu through KVM](https://askubuntu.com/a/1353082)
+```sh
+$ sudo su
+# echo "blacklist hid_logitech_dj" >> /etc/modprobe.d/blacklist.conf
+# update-initramfs -u
+```
+
+#### Dell Dock D6000
+
+If secure uefi boot  enabled , first install dkms
+```sh
+sudo apt update
+sudo apt install dkms
+sudo apt install libdrm-dev
+sudo apt install evdi-dkms
+```
+Reboot and then enter OTP
+
+
+Then install latext dell drivers from:
+https://www.synaptics.com/products/displaylink-graphics/downloads
+
+
+[Troubleshooting page](https://support.displaylink.com/knowledgebase/topics/103927-troubleshooting-ubuntu) 
 
 
 
