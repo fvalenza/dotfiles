@@ -22,21 +22,23 @@ alias gstash='git stash'
 #==============#
 alias home='cd ~'
 alias root='cd /'
+alias desktop='cd ~/Desktop'
+alias dotbashrc='cd ~/dotbashrc'
 alias rootf='cd $MY_ROOT_FILETREE'
 alias audio='cd $MY_ROOT_FILETREE/audio'
 alias devel='cd $DEVEL_DIR'
+alias src='cd $MY_ROOT_FILETREE/devel/src'
+alias install='cd $MY_ROOT_FILETREE/devel/install'
 alias documents='cd $MY_ROOT_FILETREE/documents'
 alias images='cd $MY_ROOT_FILETREE/images'
 alias litterature='cd $MY_ROOT_FILETREE/litterature'
 alias videos='cd $MY_ROOT_FILETREE/videos'
-alias dtop='cd ~/Desktop'
-alias dotbashrc='cd ~/dotbashrc'
 alias ..='cd ..;'
-alias ..2='cd ../..;'
-alias ..3='cd ../../..;'
+alias .2='cd ../..;'
+alias .3='cd ../../..;'
+alias .4='cd ../../../..;'
 alias cdd='cd $DEVEL_DIR' # to remove if i get confortqble with 'devel'
-alias src='cd $MY_ROOT_FILETREE/devel/src'
-alias install='cd $MY_ROOT_FILETREE/devel/install'
+
 
 
 # Common project directories ## TODO
@@ -51,12 +53,14 @@ alias install='cd $MY_ROOT_FILETREE/devel/install'
 #=======================#
 
 alias c='clear'
+alias e='subl'
 alias h='history'
 alias o=xdg-open # on Ubuntu only
 alias q=’exit’
 alias bashrc='source ~/.bashrc'
 alias mkdir='mkdir -p -v' # Make a directory and all parent directories with verbosity.
 # alias tree='tree --dirsfirst -F' # Display the directory structure better.
+alias v=vim
 
 # some more ls aliases
 alias ll='ls -alF'
