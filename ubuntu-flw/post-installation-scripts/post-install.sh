@@ -68,6 +68,8 @@ mkdir -p $userhome/root-filetree/litterature/partitions
 mkdir -p $userhome/root-filetree/litterature/user-manuals
 mkdir -p $userhome/root-filetree/softwares
 mkdir -p $userhome/root-filetree/videos
+mkdir -p $userhome/root-filetree/work
+
 
 chown -R "$username:$username" "$userhome"
 
@@ -79,8 +81,8 @@ cd $develdir/src
 run_as_user "git clone --recursive https://github.com/fvalenza/dotfiles";
 
 
-ALIAS_CD_TO_INSTALL_DIR="alias cdpostinstall='cd  ~/root-filetree/devel/src/dotfiles/ubuntu-flw/post-installation-scripts'"
-echo $ALIAS_CD_TO_INSTALL_DIR >> ~/.bashrc
+ALIAS_CD_TO_INSTALL_DIR="alias cdpostinstall='cd  $postinstallscriptsdir'"
+run_as_user "echo $ALIAS_CD_TO_INSTALL_DIR >> ~/.bashrc";
 
 #--------------------#
 # Install components #
