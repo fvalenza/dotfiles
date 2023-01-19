@@ -35,6 +35,20 @@ At the end of component 0 installation, a reboot is automatically performed
 
 This component is mandatory for the others to work.
 
+To complete installation of Brave:
+In settings, use gtk appearance.
++ install following extensions:
+
+- [extensity](https://chrome.google.com/webstore/detail/extensity/jjmflmamggggndanpgfnpelongoepncg?hl=fr)
+- [autotab discard ](https://chrome.google.com/webstore/detail/auto-tab-discard/jhnleheckmknfcgijgkadoemagpecfol?hl=fr)
+- [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=fr)
+- [AutoplayStopper](https://chrome.google.com/webstore/detail/autoplaystopper/ejddcgojdblidajhngkogefpkknnebdh?hl=fr)
+- [DarkReader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh?hl=fr)
+- [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=fr)
+- [Tabli](https://chrome.google.com/webstore/detail/tabli/igeehkedfibbnhbfponhjjplpkeomghi?hl=fr)
+- [Bypass Pay Wall](https://gitlab.com/magnolia1234/bypass-paywalls-chrome-clean)
+- [Screenshot Youtube](https://chrome.google.com/webstore/detail/screenshot-youtube/gjoijpfmdhbjkkgnmahganhoinjjpohk?hl=fr) -> Do not forget to enable in settings the rate buttons for YT videos
+
 #### __Component 2__
 
 After component 2 installation, start ulauncher from terminal and in the settingsm enable "Start at launch"
