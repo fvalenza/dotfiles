@@ -28,7 +28,7 @@ rm ./discord.deb
 # # Install itch.io
 # Aller dans ~/Download
 # wget -O itch-setup "https://itch.io/app/download?platform=linux"
-# chmod +x itch-setup && ./itch-setup # attention sudo ou pas...
+# chmod +x itch-setup && ./itch-setup
 
 
 # lutris ?

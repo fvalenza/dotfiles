@@ -66,6 +66,7 @@ mkdir -p $userhome/root-filetree/litterature
 mkdir -p $userhome/root-filetree/litterature/book
 mkdir -p $userhome/root-filetree/litterature/partitions
 mkdir -p $userhome/root-filetree/litterature/user-manuals
+mkdir -p $userhome/root-filetree/music
 mkdir -p $userhome/root-filetree/softwares
 mkdir -p $userhome/root-filetree/videos
 mkdir -p $userhome/root-filetree/work
@@ -81,8 +82,10 @@ cd $develdir/src
 run_as_user "git clone --recursive https://github.com/fvalenza/dotfiles";
 
 
-ALIAS_CD_TO_INSTALL_DIR="alias cdpostinstall='cd  $postinstallscriptsdir'"
+ALIAS_CD_TO_INSTALL_DIR="alias cdpostinstall=cd  $postinstallscriptsdir"
 run_as_user "echo $ALIAS_CD_TO_INSTALL_DIR >> ~/.bashrc";
+#BUG. for the alias cdpostinstall, add '' in bashrc around the command to be aliased. Perhaps echo -ne here to fix it with \' in ALIAS_CD_TO_INSTALL_DIR ? 
+
 
 #--------------------#
 # Install components #
