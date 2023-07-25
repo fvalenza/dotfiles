@@ -38,7 +38,8 @@ wget https://www.scootersoftware.com/bcompare-4.4.4.27058_amd64.deb
 
 nala update
 
-nala install -y brave-browser htop bashtop neofetch tldr autojump unzip make python3-pip gpaste tree ncal
+nala install -y fd neovim zoxide ripgrep nodejs npm brave-browser htop bashtop neofetch tldr autojump unzip make python3-pip gpaste tree ncal fzf
+npm install tree-sitter tree-sitter-cli
 nala install -y ./bcompare-4.4.4.27058_amd64.deb
 
 rm ./bcompare-4.4.4.27058_amd64.deb

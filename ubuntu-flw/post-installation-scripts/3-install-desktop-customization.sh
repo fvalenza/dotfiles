@@ -44,8 +44,8 @@ nala install -y gnome-tweaks gnome-shell-extension-manager gnome-shell-extension
 
 
 # Install fonts
-nala install -y fonts-roboto
-nala install fonts-font-awesome -y
+mkdir -p /home/$username/.local/share/fonts
+unzip $assetsdir/fonts/JetBrainsMono.zip -d "/home/$username/.local/share/fonts"
 
 
 

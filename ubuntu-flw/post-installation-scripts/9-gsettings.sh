@@ -69,9 +69,9 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
 
 # Set fonts
-gsettings set org.gnome.desktop.interface document-font-name 'Roboto 11'
-gsettings set org.gnome.desktop.interface font-name 'Roboto 11'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 11'
+gsettings set org.gnome.desktop.interface document-font-name 'JetBrainsMono Nerd Font 11'
+gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrainsMono Nerd Font Bold 11'
 
 # Set Desktop Everforest theme
 gsettings set org.gnome.desktop.interface gtk-theme everforest-gtk

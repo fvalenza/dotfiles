@@ -162,9 +162,24 @@ scrolling:
   # to the terminal.
   auto_scroll: false
 
+font:
+  normal:
+    family: "JetBrainsMonoNerdFont"
+    style: Regular
+  bold:
+    family: "JetBrainsMonoNerdFont"
+    style: Bold
+  italic:
+    family: "JetBrainsMonoNerdFont"
+    style: Italic
+  bold_italic:
+    family: "JetBrainsMonoNerdFont"
+    style: Bold Italic
 
+# For sending ctrl-shift-key, see https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
 key_bindings:
   - { key: PageUp,   mods: Shift,   action: ScrollPageUp   }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown }
   - { key: End,      mods: Shift,   action: ScrollToBottom }
   - { key: Home,     mods: Shift,   action: ScrollToTop    }
+  - { key: D,        mods: Control|Shift, chars: "\x1b[68;5u" }
