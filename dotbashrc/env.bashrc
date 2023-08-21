@@ -15,3 +15,4 @@ export GIT_EDITOR=vim
 
 export PATH=$PATH:$DEVEL_DIR/install/bin
 export PATH=$PATH:$userhome/.cargo/bin
+export PATH=$PATH:$userhome/Applications

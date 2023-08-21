@@ -62,6 +62,7 @@ alias bashrc='source ~/.bashrc'
 alias mkdir='mkdir -p -v' # Make a directory and all parent directories with verbosity.
 # alias tree='tree --dirsfirst -F' # Display the directory structure better.
 alias v=vim
+alias nv=nvim
 
 # some more ls aliases
 alias ll='ls -alF'
