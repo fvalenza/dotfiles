@@ -13,13 +13,6 @@
         "last_commit": "fcf75949888eeb5ee5920ca43fc70d28151de33c",
         "last_commit_time": "2022-12-05T09:13:19"
     },
-    "com.github.fajtak.ulauncher-weather": {
-        "id": "com.github.fajtak.ulauncher-weather",
-        "url": "https://github.com/fajtak/ulauncher-weather",
-        "updated_at": "2023-01-28T23:20:03.351866",
-        "last_commit": "996da704e505776753f6340755d20f03075c2be8",
-        "last_commit_time": "2022-04-05T18:23:30"
-    },
     "com.github.nastuzzisamy.ulauncher-translate": {
         "id": "com.github.nastuzzisamy.ulauncher-translate",
         "url": "https://github.com/NastuzziSamy/ulauncher-translate",
@@ -27,33 +20,12 @@
         "last_commit": "f16b6eed05923e604bacafefdc40b7b7290e21da",
         "last_commit_time": "2021-03-27T11:43:48"
     },
-    "com.github.pbkhrv.ulauncher-keepassxc": {
-        "id": "com.github.pbkhrv.ulauncher-keepassxc",
-        "url": "https://github.com/pbkhrv/ulauncher-keepassxc",
-        "updated_at": "2023-01-28T23:20:05.825656",
-        "last_commit": "11309e2d7107fd1921dbce0295ba584203475307",
-        "last_commit_time": "2021-06-16T17:57:16"
-    },
-    "com.github.ultiblog.ulauncher-password-generator": {
-        "id": "com.github.ultiblog.ulauncher-password-generator",
-        "url": "https://github.com/Ultiblog/ULauncher-Password-Generator",
-        "updated_at": "2023-01-28T23:20:07.074391",
-        "last_commit": "de08e6b3ce1c58e4f2b23321702ba40fa2110f73",
-        "last_commit_time": "2022-11-11T12:05:05"
-    },
     "com.github.mikebarkmin.ulauncher-obsidian": {
         "id": "com.github.mikebarkmin.ulauncher-obsidian",
         "url": "https://github.com/mikebarkmin/ulauncher-obsidian",
         "updated_at": "2023-01-28T23:20:08.444277",
         "last_commit": "d1c282fb1ba57438e61e036def134917ec921f90",
         "last_commit_time": "2023-01-22T06:30:15"
-    },
-    "com.github.lighttigerxiv.ulauncher-terminal-runner-extension": {
-        "id": "com.github.lighttigerxiv.ulauncher-terminal-runner-extension",
-        "url": "https://github.com/lighttigerXIV/ulauncher-terminal-runner-extension/",
-        "updated_at": "2023-01-28T23:20:09.600142",
-        "last_commit": "8cbcf85e8b3a48a45d2d181488af6e5d89bff1b0",
-        "last_commit_time": "2022-05-22T12:33:25"
     },
     "com.github.fisadev.ulauncher-better-file-browser": {
         "id": "com.github.fisadev.ulauncher-better-file-browser",
@@ -76,27 +48,6 @@
         "last_commit": "bc50d9f41d46b6813a5aeebddd15734dcdb9d8db",
         "last_commit_time": "2019-05-28T18:30:00"
     },
-    "com.github.ulauncher.ulauncher-timer": {
-        "id": "com.github.ulauncher.ulauncher-timer",
-        "url": "https://github.com/ulauncher/ulauncher-timer",
-        "updated_at": "2023-01-28T23:20:14.711840",
-        "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
-        "last_commit_time": "2020-11-03T07:21:30"
-    },
-    "com.github.nastuzzisamy.ulauncher-youtube-search": {
-        "id": "com.github.nastuzzisamy.ulauncher-youtube-search",
-        "url": "https://github.com/NastuzziSamy/ulauncher-youtube-search",
-        "updated_at": "2023-01-28T23:20:16.037594",
-        "last_commit": "fe855811358b2f15ec6ed69ca18e20639874fa28",
-        "last_commit_time": "2021-03-27T11:29:18"
-    },
-    "com.github.brpaz.ulauncher-github": {
-        "id": "com.github.brpaz.ulauncher-github",
-        "url": "https://github.com/brpaz/ulauncher-github",
-        "updated_at": "2023-01-28T23:20:18.577639",
-        "last_commit": "c2a4d8f651c326c13290eb9e28c076f14aaac704",
-        "last_commit_time": "2022-10-15T10:36:52"
-    },
     "com.github.ralcaidev.ulauncher-extension-list": {
         "id": "com.github.ralcaidev.ulauncher-extension-list",
         "url": "https://github.com/ralcaidev/ulauncher-extension-list",
@@ -110,13 +61,6 @@
         "updated_at": "2023-01-28T23:20:21.309637",
         "last_commit": "d8f495df3c7f41ee8493b207d17f06fc0372c84e",
         "last_commit_time": "2020-09-23T01:29:15"
-    },
-    "com.github.pegoku.ulauncher-brave": {
-        "id": "com.github.pegoku.ulauncher-brave",
-        "url": "https://github.com/Pegoku/ulauncher-brave",
-        "updated_at": "2023-01-28T23:20:22.702366",
-        "last_commit": "3166aad57ff0252271c0bfe72a0a2d37f37e3b0d",
-        "last_commit_time": "2022-11-05T15:40:52"
     },
     "com.github.ahaasler.ulauncher-tmux": {
         "id": "com.github.ahaasler.ulauncher-tmux",
