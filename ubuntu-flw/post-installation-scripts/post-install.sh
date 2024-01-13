@@ -98,7 +98,7 @@ cd $postinstallscriptsdir
 
 # /bin/bash 0-unbloat-ubuntu.sh
 # /bin/bash 1-install-essentials.sh
-# /bin/bash 2-install-app-launcher.sh
+# /bin/bash 2-install-ulauncher.sh
 # /bin/bash 3-install-desktop-customization.sh
 # /bin/bash 4-install-terminal.sh
 # /bin/bash 5-install-development-tools.sh

@@ -49,7 +49,6 @@ unzip $assetsdir/fonts/JetBrainsMono.zip -d "/home/$username/.local/share/fonts"
 
 
 
-
 #---------------------------------------------------#
 # Desktop environment Configuration - Install theme #
 #---------------------------------------------------#
@@ -82,18 +81,6 @@ cd Tela-circle-icon-theme
 run_as_user "/bin/bash ./install.sh \"green\"";
 
 
-
-#----------------------------------------------------#
-# Desktop environment Configuration - Install Cursor #
-#----------------------------------------------------#
-
-# # Get Nordic cursor // to change ?
-# run_as_user "mkdir -p /home/$username/.icons";
-# tar -xvf $dotfilesdir/ubuntu-flw/assets/cursors/Nordic-cursors.tar.xz --directory $dotfilesdir/ubuntu-flw/assets/cursors
-# run_as_user "cp -R $dotfilesdir/ubuntu-flw/assets/cursors/Nordic-cursors /home/$username/.icons";
-
-
-
 #-------------------------------------------------------#
 # Desktop environment Configuration - Install Wallpaper #
 #-------------------------------------------------------#
@@ -102,35 +89,3 @@ run_as_user "/bin/bash ./install.sh \"green\"";
 # Find other Wallpapers for everforest rice at https://unsplash.com/fr/s/visuel/aa7ece37-3aaf-4a70-ab56-2c8421c94cfa
 cp $dotfilesdir/ubuntu-flw/assets/images/wallhaven-l3v7ky_1920x1080.png $rootftdir/images/artwork/wallpaper
 chown -R "$username:$username" "$rootftdir/images"
-
-
-
-#------------------------------------------#
-# Desktop environment Configuration - sddm #
-#------------------------------------------#
-
-
-#-------------------------------------------#
-# Desktop environment Configuration - conky #
-#-------------------------------------------#
-
-add-apt-repository -y ppa:teejee2008/foss
-nala update
-nala insall -y conki-all lua5.4 jq
-
-mkdir $userhome/.config/conky
-# unzip $assetsdir/conky/Nunki.zip -d "$userhome/.config/conky"
-cp -R $assetsdir/conky/Nunki $userhome/.config/conky
-
-chmod +x $userhome/.config/conky/start.sh
-chmod +x $userhome/.config/conky/scripts/*
-chown -R "$username:$username" "$userhome/.config/conky"
-
-cp $userhome/.config/conky/Nunki/fonts/* $username/.fonts
-chown -R "$username:$username" "$userhome/.fonts"
-
-cp $assetsdir/conky/conky.desktop $userhome/.config/autostart
-chown -R "$username:$username" "$userhome/.config/autostart"
-
-run_as_user "fc-cache -fv";
-
