@@ -17,52 +17,82 @@ develdir=$rootftdir/devel
 dotfilesdir=$develdir/src/dotfiles
 postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
-
-##TODO: Faire des fonctions ? Une fonction "install" (qui installe alacritty puis fait appel a update) et une fonction "update_bash_config" ? Dans le cas ou j'update les fichiers bashrc
-
 #--------------------#
-# Bash Configuration #
+#  Utility functions #
 #--------------------#
 
-# copy .bashrc files into ~/dotbashrc
-mkdir -p $userhome/dotbashrc
-cp -R $dotfilesdir/dotbashrc/. $userhome/dotbashrc
-
-chown -R "$username:$username" "$userhome/dotbashrc"
-
-
-# add to ~/.bashrc to source my personal configurations
-MYBASHRC_CONFIG=$userhome/dotbashrc/my-bashrc-config.sh
-SOURCE_MYBASHRC_CONFIG_CMD="if [ -f $MYBASHRC_CONFIG ]; then source $MYBASHRC_CONFIG; fi"
-
-if [[ -f ~/.bashrc ]]
-then
-  if grep -Fxq "$SOURCE_MYBASHRC_CONFIG_CMD" ~/.bashrc
-  then
-      # bashrc already setup
-      :
-  else
-      echo $SOURCE_MYBASHRC_CONFIG_CMD >> $userhome/.bashrc
-  fi
-else
-  cp my-default-bashrc $userhome
-  mv $userhome/my-default-bashrc $userhome/.bashrc
-  chown "$username:$username" "$userhome/.bashrc"
-fi
-
+run_as_user() {
+  sudo -u $username bash -c "$1";
+}
 
 #------------------------#
 # Alacritty Installation #
 #------------------------#
-add-apt-repository -y ppa:aslatter/ppa
-nala update
-nala install -y alacritty
+
+install_alacritty() {
+  echo "Installing Alacritty"
+  add-apt-repository -y ppa:aslatter/ppa
+  nala update
+  nala install -y alacritty
+  echo "Configuring Alacritty"
+  cp -R $dotfilesdir/ubuntu-flw/dotconfig/alacritty $userhome/.config
+  chown -R "$username:$username" "$userhome/.config/alacritty"
+}
+
+install_guake() {
+  echo "Installing Guake"
+  nala install -y guake
+  guake --restore-preferences $dotfilesdir/ubuntu-flw/dotguake/fva-guake-preferences
+
+}
+
 
 
 #-------------------------#
-# Alacritty Configuration #
+# Bash Configuration      #
 #-------------------------#
 
-cp -R $dotfilesdir/ubuntu-flw/dotconfig/alacritty $userhome/.config
+# The idea is that i have a master personal .bashrc file (my-bashrc-config.sh) that should be sourced at the end of ~/.bashrc
+# All other custom .bashrc infos are splitted in the dotbashrc folder and sourced in my-bashrc-config if necessary
+configure_bash() {
+  echo "Configuring Bash"
+  # copy .bashrc files into ~/dotbashrc
+  mkdir -p $userhome/dotbashrc
+  cp -R $dotfilesdir/dotbashrc/. $userhome/dotbashrc
+  chown -R "$username:$username" "$userhome/dotbashrc"
 
-chown -R "$username:$username" "$userhome/.config/alacritty"
+  # add to ~/.bashrc to source my personal configurations
+  MYBASHRC_CONFIG=$userhome/dotbashrc/my-bashrc-config.sh
+  SOURCE_MYBASHRC_CONFIG_CMD="if [ -f $MYBASHRC_CONFIG ]; then source $MYBASHRC_CONFIG; fi"
+
+  if [[ -f ~/.bashrc ]]; then
+    if grep -Fxq "$SOURCE_MYBASHRC_CONFIG_CMD" ~/.bashrc; then
+      # bashrc already setup
+      :
+    else
+      echo $SOURCE_MYBASHRC_CONFIG_CMD >> $userhome/.bashrc
+    fi
+  else
+    cp my-default-bashrc $userhome
+    mv $userhome/my-default-bashrc $userhome/.bashrc
+    chown "$username:$username" "$userhome/.bashrc"
+  fi
+}
+
+install_blesh(){
+  echo "Installing Ble.sh"
+  nala install -y git make gawk
+  cd $develdir/external-src
+  git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+  make -C ble.sh install PREFIX=~/.local
+  echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
+}
+
+#-------------------------#
+# Main Script             #
+#-------------------------#
+
+install_alacritty
+install_guake
+configure_bash
+install_blesh
