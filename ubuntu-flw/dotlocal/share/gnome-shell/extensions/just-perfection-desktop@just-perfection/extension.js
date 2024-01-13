@@ -2,7 +2,7 @@
  * Extension
  *
  * @author     Javad Rahmatzadeh <j.rahmatzadeh@gmail.com>
- * @copyright  2020-2022
+ * @copyright  2020-2023
  * @license    GPL-3.0-only
  */
 
@@ -20,12 +20,12 @@ const Main = imports.ui.main;
 const BackgroundMenu = imports.ui.backgroundMenu;
 const OverviewControls = imports.ui.overviewControls;
 const WorkspaceSwitcherPopup = imports.ui.workspaceSwitcherPopup;
-const ViewSelector = (shellVersion < 40) ? imports.ui.viewSelector : null;
+const SwitcherPopup = imports.ui.switcherPopup;
 const WorkspaceThumbnail = imports.ui.workspaceThumbnail;
-const SearchController = (shellVersion >= 40) ? imports.ui.searchController : null;
+const SearchController = imports.ui.searchController;
 const Panel = imports.ui.panel;
 const WorkspacesView = imports.ui.workspacesView;
-const WindowPreview = (shellVersion >= 3.38) ? imports.ui.windowPreview : null;
+const WindowPreview = imports.ui.windowPreview;
 const Workspace = imports.ui.workspace;
 const LookingGlass = imports.ui.lookingGlass;
 const MessageTray = imports.ui.messageTray;
@@ -52,10 +52,9 @@ function init()
  */
 function enable()
 {
-    // <3.36 can crash by enabling the extension
-    // since <3.36 is not supported we simply return
-    // to avoid bad experience for <3.36 users.
-    if (shellVersion < 3.36) {
+    // Some old GNOME Shells can crash on enable while those versions are not
+    // supported. To avoid bad experience for those versions we simply `return`
+    if (shellVersion < 42) {
         return;
     }
 
@@ -66,9 +65,9 @@ function enable()
         BackgroundMenu,
         OverviewControls,
         WorkspaceSwitcherPopup,
+        SwitcherPopup,
         InterfaceSettings,
         SearchController,
-        ViewSelector,
         WorkspaceThumbnail,
         WorkspacesView,
         Panel,
@@ -108,14 +107,10 @@ function enable()
  */
 function disable()
 {
-    if (manager) {
-        manager.revertAll();
-        manager = null;
-    }
+    manager?.revertAll();
+    manager = null;
 
-    if (api) {
-        api.close();
-        api = null;
-    }
+    api?.close();
+    api = null;
 }
 

@@ -2,7 +2,7 @@
  * Manager Library
  *
  * @author     Javad Rahmatzadeh <j.rahmatzadeh@gmail.com>
- * @copyright  2020-2022
+ * @copyright  2020-2023
  * @license    GPL-3.0-only
  */
 
@@ -66,14 +66,6 @@ var Manager = class
             this._applyBackgroundMenu(false);
         });
 
-        this._settings.connect('changed::gesture', () => {
-            this._applyGesture(false);
-        });
-
-        this._settings.connect('changed::hot-corner', () => {
-            this._applyHotCorner(false);
-        });
-
         this._settings.connect('changed::theme', () => {
             this._applyTheme(false);
         });
@@ -106,10 +98,6 @@ var Manager = class
             this._applyQuickSettings(false);
         });
 
-        this._settings.connect('changed::panel-corner-size', () => {
-            this._applyPanelCornerSize(false);
-        });
-
         this._settings.connect('changed::window-picker-icon', () => {
             this._applyWindowPickerIcon(false);
         });
@@ -128,10 +116,6 @@ var Manager = class
 
         this._settings.connect('changed::top-panel-position', () => {
             this._applyTopPanelPosition(false);
-        });
-
-        this._settings.connect('changed::panel-arrow', () => {
-            this._applyPanelArrow(false);
         });
 
         this._settings.connect('changed::panel-notification-icon', () => {
@@ -230,8 +214,16 @@ var Manager = class
             this._applyRippleBox(false);
         });
 
+        this._settings.connect('changed::overlay-key', () => {
+            this._applyOverlayKey(false);
+        });
+
         this._settings.connect('changed::double-super-to-appgrid', () => {
-            this._applyDoubleSuperToAppgrid(false);
+            this._applyOverlayKey(false);
+        });
+
+        this._settings.connect('changed::switcher-popup-delay', () => {
+            this._applySwitcherPopupDelay(false);
         });
 
         this._settings.connect('changed::world-clock', () => {
@@ -285,6 +277,26 @@ var Manager = class
         this._settings.connect('changed::alt-tab-icon-size', () => {
             this._applyAltTabIconSize(false);
         });
+
+        this._settings.connect('changed::screen-sharing-indicator', () => {
+            this._applyScreenSharingIndicator(false);
+        });
+        
+        this._settings.connect('changed::screen-recording-indicator', () => {
+            this._applyScreenRecordingIndicator(false);
+        });
+
+        this._settings.connect('changed::controls-manager-spacing-size', () => {
+            this._applyControlsManagerSpacingSize(false);
+        });
+
+        this._settings.connect('changed::workspace-peek', () => {
+            this._applyWorkspacePeek(false);
+        });
+
+        this._settings.connect('changed::dash-app-running', () => {
+            this._applyDashAppRunning(true);
+        });
     }
 
     /**
@@ -302,8 +314,6 @@ var Manager = class
         this._applyWorkspacePopup(false);
         this._applyWorkspace(false);
         this._applyBackgroundMenu(false);
-        this._applyGesture(false);
-        this._applyHotCorner(false);
         this._applyActivitiesButton(false);
         this._applyAppMenu(false);
         this._applyClockMenu(false);
@@ -311,13 +321,11 @@ var Manager = class
         this._applyAccessibilityMenu(false);
         this._applyAggregateMenu(false);
         this._applyQuickSettings(false);
-        this._applyPanelCornerSize(false);
         this._applyWindowPickerIcon(false);
         this._applyTypeToSearch(false);
         this._applyWorkspaceSwitcherSize(false);
         this._applyPowerIcon(false);
         this._applyTopPanelPosition(false);
-        this._applyPanelArrow(false);
         this._applyPanelNotificationIcon(false);
         this._applyAppMenuIcon(false);
         this._applyAppMenuLabel(false);
@@ -339,7 +347,8 @@ var Manager = class
         this._applyWorkspaceBackgroundCornerSize(false);
         this._applyWorkspaceWrapAround(false);
         this._applyRippleBox(false);
-        this._applyDoubleSuperToAppgrid(false);
+        this._applyOverlayKey(false);
+        this._applySwitcherPopupDelay(false);
         this._applyWorldClock(false);
         this._applyWeather(false);
         this._applyPanelIconSize(false);
@@ -352,6 +361,11 @@ var Manager = class
         this._applyAltTabWindowPreviewSize(false);
         this._applyAltTabSmallIconSize(false);
         this._applyAltTabIconSize(false);
+        this._applyScreenSharingIndicator(false);
+        this._applyScreenRecordingIndicator(false);
+        this._applyControlsManagerSpacingSize(false);
+        this._applyWorkspacePeek(false);
+        this._applyDashAppRunning(false);
     }
 
     /**
@@ -369,8 +383,6 @@ var Manager = class
         this._applyWorkspace(true);
         this._applyWorkspacePopup(true);
         this._applyBackgroundMenu(true);
-        this._applyGesture(true);
-        this._applyHotCorner(true);
         this._applyActivitiesButton(true);
         this._applyAppMenu(true);
         this._applyClockMenu(true);
@@ -378,13 +390,11 @@ var Manager = class
         this._applyAccessibilityMenu(true);
         this._applyAggregateMenu(true);
         this._applyQuickSettings(true);
-        this._applyPanelCornerSize(true);
         this._applyWindowPickerIcon(true);
         this._applyTypeToSearch(true);
         this._applyWorkspaceSwitcherSize(true);
         this._applyPowerIcon(true);
         this._applyTopPanelPosition(true);
-        this._applyPanelArrow(true);
         this._applyPanelNotificationIcon(true);
         this._applyAppMenuIcon(true);
         this._applyAppMenuLabel(true);
@@ -406,7 +416,8 @@ var Manager = class
         this._applyWorkspaceBackgroundCornerSize(true);
         this._applyWorkspaceWrapAround(true);
         this._applyRippleBox(true);
-        this._applyDoubleSuperToAppgrid(true);
+        this._applyOverlayKey(true);
+        this._applySwitcherPopupDelay(true);
         this._applyWorldClock(true);
         this._applyWeather(true);
         this._applyPanelIconSize(true);
@@ -419,6 +430,11 @@ var Manager = class
         this._applyAltTabWindowPreviewSize(true);
         this._applyAltTabSmallIconSize(true);
         this._applyAltTabIconSize(true);
+        this._applyScreenSharingIndicator(true);
+        this._applyScreenRecordingIndicator(true);
+        this._applyControlsManagerSpacingSize(true);
+        this._applyWorkspacePeek(true);
+        this._applyDashAppRunning(true);
     }
 
     /**
@@ -437,7 +453,7 @@ var Manager = class
             this._api.panelShow();
         } else {
             let mode = (panelInOverview) ? 1 : 0;
-            this._api.panelHide(mode, 0);
+            this._api.panelHide(mode);
         }
     }
 
@@ -554,44 +570,6 @@ var Manager = class
     }
 
     /**
-     * apply gesture settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyGesture(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('gesture')) {
-            this._api.gestureEnable();
-        } else {
-            this._api.gestureDisable();
-        }
-    }
-
-    /**
-     * apply hot corner settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyHotCorner(forceOriginal)
-    {
-        if (this._shellVersion >= 41) {
-            return;
-        }
-    
-        if (forceOriginal) {
-            this._api.hotCornersDefault();
-        } else if (!this._settings.get_boolean('hot-corner')) {
-            this._api.hotCornersDisable();
-        } else {
-            this._api.hotCornersEnable();
-        }
-    }
-
-    /**
      * apply theme settings
      *
      * @param {boolean} forceOriginal force original shell setting
@@ -601,26 +579,16 @@ var Manager = class
     _applyTheme(forceOriginal)
     {
         let className = 'just-perfection';
-        let fallbackClassName = 'just-perfection-gnome3';
-        let fourtySecondGenClassName = 'just-perfection-gnome4x-2nd-gen';
 
         if (forceOriginal || !this._settings.get_boolean('theme')) {
             this._api.UIStyleClassRemove(className);
-            this._api.UIStyleClassRemove(fallbackClassName);
-            this._api.UIStyleClassRemove(fourtySecondGenClassName);
         } else {
             this._api.UIStyleClassAdd(className);
-            if (this._shellVersion < 40) {
-                this._api.UIStyleClassAdd(fallbackClassName);
-            }
-            if (this._shellVersion >= 42) {
-                this._api.UIStyleClassAdd(fourtySecondGenClassName);
-            }
         }
     }
 
     /**
-     * apply activites button settings
+     * apply activities button settings
      *
      * @param {boolean} forceOriginal force original shell setting
      *
@@ -732,24 +700,6 @@ var Manager = class
     }
 
     /**
-     * apply panel corner size settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyPanelCornerSize(forceOriginal)
-    {
-        let size = this._settings.get_int('panel-corner-size');
-
-        if (forceOriginal || size === 0) {
-            this._api.panelCornerSetDefault();
-        } else {
-            this._api.panelCornerSetSize(size - 1);
-        }
-    }
-
-    /**
      * apply window picker icon settings
      *
      * @param {boolean} forceOriginal force original shell setting
@@ -779,7 +729,7 @@ var Manager = class
         if (forceOriginal || size === 0) {
             this._api.workspaceSwitcherSetDefaultSize();
         } else {
-            this._api.workspaceSwitcherSetSize(size / 100, false);
+            this._api.workspaceSwitcherSetSize(size / 100);
         }
     }
 
@@ -812,22 +762,6 @@ var Manager = class
             this._api.panelSetPosition(0);
         } else {
             this._api.panelSetPosition(1);
-        }
-    }
-
-    /**
-     * apply panel arrow settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyPanelArrow(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('panel-arrow')) {
-            this._api.panelArrowEnable();
-        } else {
-            this._api.panelArrowDisable();
         }
     }
 
@@ -889,7 +823,7 @@ var Manager = class
     _applyClockMenuPosition(forceOriginal)
     {
         if (forceOriginal) {
-            this._api.clockMenuPositionSet(0, 0);
+            this._api.clockMenuPositionSetDefault();
         } else {
             let pos = this._settings.get_int('clock-menu-position');
             let offset = this._settings.get_int('clock-menu-position-offset');
@@ -925,7 +859,7 @@ var Manager = class
         let animation = this._settings.get_int('animation');
 
         let factors = [
-            0.4, // fastest
+            0.2, // fastest
             0.6, // faster
             0.8, // fast
             1.3, // slow
@@ -1224,20 +1158,48 @@ var Manager = class
     }
 
     /**
-     * apply double super to appgrid settings
+     * apply overlay key
      *
      * @param {boolean} forceOriginal force original shell setting
      *
      * @returns {void}
      */
-    _applyDoubleSuperToAppgrid(forceOriginal)
+    _applyOverlayKey(forceOriginal)
     {
-        let status = this._settings.get_boolean('double-super-to-appgrid');
+        let overlayKey = this._settings.get_boolean('overlay-key');
+        let doubleSuper = this._settings.get_boolean('double-super-to-appgrid');
+
+        if (forceOriginal) {
+            this._api.doubleSuperToAppGridEnable();
+            this._api.unblockOverlayKey();
+        } else if (!overlayKey) {
+            this._api.doubleSuperToAppGridEnable();
+            this._api.blockOverlayKey();
+        } else {
+            this._api.unblockOverlayKey();
+            if (doubleSuper) {
+                this._api.doubleSuperToAppGridEnable();
+            } else {
+                this._api.doubleSuperToAppGridDisable();
+            }
+        }
+    }
+
+    /**
+     * apply switcher popup delay settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applySwitcherPopupDelay(forceOriginal)
+    {
+        let status = this._settings.get_boolean('switcher-popup-delay');
 
         if (forceOriginal || status) {
-            this._api.doubleSuperToAppGridEnable();
+            this._api.switcherPopupDelaySetDefault();
         } else {
-            this._api.doubleSuperToAppGridDisable();
+            this._api.removeSwitcherPopupDelay();
         }
     }
 
@@ -1457,6 +1419,92 @@ var Manager = class
             this._api.altTabIconSetDefaultSize();
         } else {
             this._api.altTabIconSetSize(size);
+        }
+    }
+
+    /**
+     * apply screen sharing indicator settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyScreenSharingIndicator(forceOriginal)
+    {
+        let status = this._settings.get_boolean('screen-sharing-indicator');
+
+        if (forceOriginal || status) {
+            this._api.screenSharingIndicatorEnable();
+        } else {
+            this._api.screenSharingIndicatorDisable();
+        }
+    }
+
+    /**
+     * apply screen recording indicator settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyScreenRecordingIndicator(forceOriginal)
+    {
+        let status = this._settings.get_boolean('screen-recording-indicator');
+
+        if (forceOriginal || status) {
+            this._api.screenRecordingIndicatorEnable();
+        } else {
+            this._api.screenRecordingIndicatorDisable();
+        }
+    }
+
+    /**
+     * apply controls manager spacing size settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyControlsManagerSpacingSize(forceOriginal)
+    {
+        let size = this._settings.get_int('controls-manager-spacing-size');
+
+        if (forceOriginal || size === 0) {
+            this._api.controlsManagerSpacingSetDefault();
+        } else {
+            this._api.controlsManagerSpacingSizeSet(size);
+        }
+    }
+
+    /**
+     * apply workspace peek
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyWorkspacePeek(forceOriginal)
+    {
+        if (forceOriginal || this._settings.get_boolean('workspace-peek')) {
+            this._api.workspacesViewSpacingSetDefault();
+        } else {
+            this._api.workspacesViewSpacingSizeSet(400);
+        }
+    }
+    
+    /**
+     * apply dash app running
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyDashAppRunning(forceOriginal)
+    {
+        if (forceOriginal || this._settings.get_boolean('dash-app-running')) {
+            this._api.dashAppRunningDotShow();
+        } else {
+            this._api.dashAppRunningDotHide();
         }
     }
 }

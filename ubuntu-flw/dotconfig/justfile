@@ -1,0 +1,2 @@
+upgradeSinglePackage package:
+    sudo apt-get --only-upgrade install {{package}}
