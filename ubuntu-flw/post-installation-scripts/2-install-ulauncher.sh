@@ -30,13 +30,10 @@ run_as_user() {
 #-------------------------#
 
 install_ulauncher() {
-  read -p "Do you want to install Ulauncher? (y/n): " install_ula
-  if [ "$install_ula" = "y" ]; then
-    echo "Installing Ulauncher"
-    add-apt-repository -y ppa:agornostal/ulauncher
-    nala update
-    nala install -y ulauncher
-  fi
+  echo "Installing Ulauncher"
+  add-apt-repository -y ppa:agornostal/ulauncher
+  nala update
+  nala install -y ulauncher
 }
 
 #-------------------------#
