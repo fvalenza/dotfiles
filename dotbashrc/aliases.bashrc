@@ -54,15 +54,18 @@ alias cdd='cd $DEVEL_DIR' # to remove if i get confortqble with 'devel'
 #=======================#
 
 alias c='clear'
-alias e='subl'
 alias h='history'
 alias o=xdg-open # on Ubuntu only
 alias q=’exit’
 alias bashrc='source ~/.bashrc'
 alias mkdir='mkdir -p -v' # Make a directory and all parent directories with verbosity.
 # alias tree='tree --dirsfirst -F' # Display the directory structure better.
-alias v=vim
-alias nv=nvim
+
+alias nve='NVIM_APPNAME=nvim-editor nvim' # Only editing capabilities
+alias e='nve'
+alias nvc='NVIM_APPNAME=nvim-code nvim' # Coding capabilities
+alias nvn='NVIM_APPNAME=nvim-notes nvim' # Note-taking capabilities
+alias nvt='NVIM_APPNAME=nvim-test nvim' # To test a plugin or conf
 
 # some more ls aliases
 alias ll='ls -alF'

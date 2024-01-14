@@ -17,3 +17,10 @@ https://www.baeldung.com/linux/shell-add-syntax-highlighting-other-features
 Peut etre interessant de le faire commencer direct dans une session tmux par default..
 
 https://unix.stackexchange.com/questions/328423/how-do-i-make-guake-start-with-tmux
+
+
+## nvim
+Select among multiple configs 
+
+https://michaeluloth.com/neovim-switch-configs/
+
