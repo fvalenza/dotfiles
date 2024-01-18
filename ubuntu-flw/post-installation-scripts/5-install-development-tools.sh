@@ -29,7 +29,7 @@ postinstallscriptsdir=$dotfilesdir/ubuntu-flw/post-installation-scripts
 
 nala install -y build-essential cmake   rust-all texlive-latex-extra libstdc++-12-dev
 nala install python3.10-dev python3.10-venv
-pip install compiledb
+pip install compiledb cpplint
 
 
 # Sublime merge

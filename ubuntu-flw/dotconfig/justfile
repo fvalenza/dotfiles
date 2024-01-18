@@ -1,2 +1,8 @@
 upgradeSinglePackage package:
     sudo apt-get --only-upgrade install {{package}}
+
+exemple-cd-and-just-inside:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    cd /home/fvalenza/root-filetree/devel/src/cpp/bare-cpp
+    just

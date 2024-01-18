@@ -37,6 +37,7 @@ apt upgrade -y
 #-------------------------------------------------------------------------#
 apt install -y wget apt-transport-https curl git nala
 
+mkdir -p $userhome/Applications
 #------------------------#
 # Root-filetree creation #
 #------------------------#

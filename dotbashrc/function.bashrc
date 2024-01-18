@@ -74,7 +74,7 @@ selectWithDefault() {
 
 }
 
-nn(){
+nv(){
     echo "Select nvim configuration:"
     ndx=$(selectWithDefault 'EditorOnly' '!Coding' 'Note Taking' 'Testing' 'Bare Neovim')
 
