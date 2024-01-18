@@ -66,11 +66,17 @@ install_beyond_compare() {
 install_utilities() {
   if [ "$AUTO_INSTALL" == "true" ] || (read -p "Do you want to install Other Utilities? (y/n): " install_utils && [ "$install_utils" == "y" ]); then
     echo "Installing Other Utilities"
-    nala install -y fd neovim zoxide ripgrep nodejs npm htop bashtop neofetch tldr autojump unzip make python3-pip gpaste tree ncal fzf tmux doxygen
+    nala install -y zoxide ripgrep nodejs npm htop bashtop neofetch tldr autojump unzip make python3-pip gpaste tree ncal fzf tmux doxygen
     npm install -g tree-sitter tree-sitter-cli
   fi
 }
 
+install_nvim() {
+    if [ "$AUTO_INSTALL" == "true" ] || (read -p "Do you want to install Neovim from apt 5may be an old versionm prefer from sources or softzare catalog perhaps) ? (y/n): " install_nv && [ "$install_nv" == "y" ]); then
+    echo "Installing Neovim from apt"
+    nala install -y neovim
+  fi
+}
 #-------------------------#
 # Main Script              #
 #-------------------------#
@@ -78,6 +84,7 @@ install_utilities() {
 install_brave_browser
 install_beyond_compare
 install_utilities
+install_nvim
 
 #-----------------------------------#
 # Packages & Programs Configuration #

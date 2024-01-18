@@ -18,7 +18,9 @@ Then install the needed components
 
 ## Components installation
 
-
+Before starting, fix the alias for cdpostinstall in .bashrc:
+Add single quote around `cd ~/root-filetree/devel/src/dotfiles/ubuntu-flw/post-installation-scripts`
+ 
 ```sh
 cdpostinstall # or cd ~/root-filetree/devel/src/dotfiles/ubuntu-flw/post-installation-scripts
 # foreach components:
@@ -37,7 +39,7 @@ This component is mandatory for the others to work.
 
 To complete installation of Brave:
 In settings, use gtk appearance.
-+ install following extensions:
++ install following extensions: => They can also be synced !!
 
 - [extensity](https://chrome.google.com/webstore/detail/extensity/jjmflmamggggndanpgfnpelongoepncg?hl=fr)
 - [autotab discard ](https://chrome.google.com/webstore/detail/auto-tab-discard/jhnleheckmknfcgijgkadoemagpecfol?hl=fr)
@@ -78,7 +80,14 @@ Then execute 9-gsettings.sh as user and NOT as root
 ./9-gsettings.sh
 ```
 After component 9 installation, please reboot
+The main Everforest theme may have not be setup correctly. If so go to tweaks > Appearance > Everforest-gtk-main for 'Applications'
 
+#### And after ?
+
+- Get a new token on github for the computer.
+- Add bookmarks to nautilus . root-filetree, homes, and root of homes
+- Setup Drive client
+- Sync brave
 
 #### KVM
 
