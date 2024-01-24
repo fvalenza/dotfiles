@@ -68,5 +68,12 @@
         "updated_at": "2023-07-02T14:28:36.920859",
         "last_commit": "dd631a2e5a1d8bf2ab21095b43afe068443f02b9",
         "last_commit_time": "2021-06-05T16:42:59"
+    },
+    "com.github.atorresg.appimagelauncher": {
+        "id": "com.github.atorresg.appimagelauncher",
+        "url": "https://github.com/atorresg/appimagelauncher",
+        "updated_at": "2024-01-24T21:57:28.249985",
+        "last_commit": "cce21696649de6e0bc45172a9a5c320f1f55ed68",
+        "last_commit_time": "2023-07-26T00:57:43"
     }
 }

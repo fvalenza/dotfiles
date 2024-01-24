@@ -37,6 +37,8 @@ At the end of component 0 installation, a reboot is automatically performed
 
 This component is mandatory for the others to work.
 
+Do not forget to install beyond compare
+
 To complete installation of Brave:
 In settings, use gtk appearance.
 + install following extensions: => They can also be synced !!
