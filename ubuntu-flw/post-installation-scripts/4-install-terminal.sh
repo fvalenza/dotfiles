@@ -79,13 +79,14 @@ configure_bash() {
   fi
 }
 
+# see https://www.baeldung.com/linux/shell-add-syntax-highlighting-other-features for more details
 install_blesh(){
   echo "Installing Ble.sh"
   nala install -y git make gawk
   cd $develdir/external-src
-  git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-  make -C ble.sh install PREFIX=~/.local
-  echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
+  run_as_user "git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git";
+  run_as_user "make -C ble.sh install PREFIX=~/.local";
+  run_as_user "echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc";
 }
 
 #-------------------------#

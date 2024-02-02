@@ -46,10 +46,10 @@ install_dependencies() {
 
   cd $develdir/external-src
 
-  git clone https://github.com/soimort/translate-shell # For translate extension
+  run_as_user "git clone https://github.com/soimort/translate-shell"; # For translate extension
   cd translate-shell
-  make
-  make install
+  run_as_user "make";
+  run_as_user "make install";
 }
 
 #-------------------------#
