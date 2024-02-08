@@ -78,7 +78,7 @@ run_as_user "mkdir -p $rootftdir/images/artwork/icons";
 cd $rootftdir/images/artwork/icons
 run_as_user "git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git";
 cd Tela-circle-icon-theme
-run_as_user "/bin/bash ./install.sh \"green\"";
+run_as_user "/bin/bash ./install.sh \"green\" \"purple\";
 
 
 #-------------------------------------------------------#
@@ -88,4 +88,5 @@ run_as_user "/bin/bash ./install.sh \"green\"";
 # Get Wallpaper
 # Find other Wallpapers for everforest rice at https://unsplash.com/fr/s/visuel/aa7ece37-3aaf-4a70-ab56-2c8421c94cfa
 cp $dotfilesdir/ubuntu-flw/assets/images/wallhaven-l3v7ky_1920x1080.png $rootftdir/images/artwork/wallpaper
+cp $dotfilesdir/ubuntu-flw/assets/images/macos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg $rootftdir/images/artwork/wallpaper
 chown -R "$username:$username" "$rootftdir/images"

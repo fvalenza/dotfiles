@@ -49,7 +49,6 @@ gnome-extensions enable ubuntu-appindicators@ubuntu.com
 
 gnome-extensions disable apps-menu@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
-gnome-extensions disable drive-menu@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable launch-new-instance@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable native-window-placement@gnome-shell-extensions.gcampax.github.com
 gnome-extensions disable places-menu@gnome-shell-extensions.gcampax.github.com
@@ -78,13 +77,13 @@ gsettings set org.gnome.desktop.interface gtk-theme everforest-gtk
 gsettings set org.gnome.shell.extensions.user-theme name Forest
 
 # Set Tela icons green
-gsettings set org.gnome.desktop.interface icon-theme Tela-circle-green
+gsettings set org.gnome.desktop.interface icon-theme Tela-circle-purple
 
 # # Change mouse cursor ?
 # gsettings set org.gnome.desktop.interface cursor-theme Nordic-cursors
 
 # Set Wallpaper
-gsettings set org.gnome.desktop.background picture-uri file://$rootftdir/images/artwork/wallpaper/wallhaven-l3v7ky_1920x1080.png
+gsettings set org.gnome.desktop.background picture-uri file://$rootftdir/images/artwork/wallpaper/macos-catalina-mountains-island-daytime-stock-5k-6016x6016-188.jpg
 
 
 
