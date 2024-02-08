@@ -73,8 +73,8 @@ gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'JetBrainsMono Nerd Font Bold 11'
 
 # Set Desktop Everforest theme
-gsettings set org.gnome.desktop.interface gtk-theme everforest-gtk
-gsettings set org.gnome.shell.extensions.user-theme name Forest
+gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Macchiato-Standard-Blue-Dark
+gsettings set org.gnome.shell.extensions.user-theme name Catppuccin-Macchiato-Standard-Blue-Dark
 
 # Set Tela icons green
 gsettings set org.gnome.desktop.interface icon-theme Tela-circle-purple

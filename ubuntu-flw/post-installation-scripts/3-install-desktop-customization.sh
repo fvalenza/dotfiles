@@ -59,6 +59,7 @@ cd /home/$username/.themes
 # Get Everforest theme
 # git clone https://github.com/theory-of-everything/everforest-gtk /home/$username/.themes/everforest-gtk
 unzip $assetsdir/themes/everforest-gtk.zip -d "/home/$username/.themes"
+unzip $assetsdir/themes/Catppuccin-Macchiato-Standard-Blue-Dark.zip -d "/home/$username/.themes"
 
 # Get Griffith-Femto shell theme
 # git clone https://github.com/Griffith-Femto/forest-dots /home/$username/.themes/forest-dots

@@ -83,6 +83,7 @@ Then execute 9-gsettings.sh as user and NOT as root
 ```
 After component 9 installation, please reboot
 The main Everforest theme may have not be setup correctly. If so go to tweaks > Appearance > Everforest-gtk-main for 'Applications'
+Same goes for catppuccin. But perhaps the problem comes from the unzip. If so, go to /home/.themes and check that themes have been correctly extracted and not inside folder of the name of the archive
 
 #### And after ?
 
