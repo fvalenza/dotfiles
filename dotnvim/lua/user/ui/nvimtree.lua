@@ -2,7 +2,7 @@ local opts_keymap = { silent = true }
 
 local M = {
   "nvim-tree/nvim-tree.lua",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   keys = {
     { "<leader>e", '<cmd>NvimTreeToggle<CR>', desc = "File Explorer", mode = "n", opts_keymap },
   },
@@ -90,6 +90,7 @@ function M.config()
   require("nvim-tree").setup {
     on_attach = on_attach,
     hijack_netrw = false,
+    update_cwd = true,
     sync_root_with_cwd = true,
     view = {
       relativenumber = true,
