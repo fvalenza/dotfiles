@@ -52,6 +52,7 @@ rm ./obsidian.deb
 
 
 run_as_user "cargo install rustfmt";
+run_as_user "cargo build just";
 
 #------------------------#
 # Obsidian configuration #
